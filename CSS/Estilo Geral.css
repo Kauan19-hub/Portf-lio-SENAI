@@ -14,13 +14,15 @@
     --success: #16A34A;
     --error: #DC2626;
     --info: #3267D9;
+    --instagram: #D94747;
+    --github: #000000;
+    --linkedin: #1B58DD;
 }
 
 body {
     background-color: var(--primary);
     color: var(--text);
     line-height: 1.6;
-    transition: background 0.4s, color 0.4s;
 }
 
 html {
@@ -78,6 +80,7 @@ html {
     position: sticky;
     top: 0;
     z-index: 1000;
+    font-family: 'Bold' sans-serif;
 
 }
 
@@ -98,13 +101,12 @@ html {
     transition: 0.2s;
     font-size: 1.1rem;
     padding: 5px 0;
-    transition: color 0,5s ease;
 
 }
 
 .navegation a:hover {
     color: var(--accent);
-    text-decoration: underline;
+    transform: scale(1.1);
        
 }
 
@@ -171,7 +173,7 @@ html {
     padding: 3rem;
     max-width: 600px;
     margin: 0 auto;
-    border: 2px solid var(--primary);
+    border: 2px solid var(--info);
     border-radius: 16px;
     backdrop-filter: blur(10px);
     background-color: rgba(0, 0, 0, 0.10);
@@ -276,38 +278,78 @@ html {
 
 }
 
-.share {
-    display: flex;
-    gap: 13px;
+footer.networks-icons {
+    padding: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
-.share i {
-    font-size: 17px;
+.instagram {
+    gap: 13px;
+    margin: 5px;
+   
+}
+
+.instagram i {
+    font-size: 19px;
     color: var(--text);
-    padding: 8px;
+    padding: 7px;
     border-radius: 50%;
-    border: 2px solid #fff;
     transition: 0.5s;
    
 }
 
-.share i:hover {
-    box-shadow: 0 2px 13px rgba(204, 204, 204, 0.541);
-    transform: scale(1.1);
-    background-color: var(--info);
+.instagram i:hover {
+    transform: scale(1.2);
+    background-color: var(--instagram);
     cursor: pointer;
 
 }
 
-
-footer.networks-icons {
-    padding: 40px;
+.github {
+    gap: 13px;
+    margin: 5px;
 
 }
 
+.github i {
+    font-size: 19px;
+    color: var(--text);
+    padding: 7px;
+    border-radius: 50%;
+    transition: 0.5s;
+
+}
+
+.github i:hover {
+    transform: scale(1.2);
+    background-color: var(--github);
+    cursor: pointer;
+
+}
+
+.linkedin {
+    gap: 13px;
+    margin: 5px;
+  
+}
+
+.linkedin i {
+    font-size: 19px;
+    color: var(--text);
+    padding: 7px;
+    border-radius: 50%;
+    transition: 0.5s;
+
+}
+
+.linkedin i:hover {
+    transform: scale(1.2);
+    background-color: var(--linkedin);
+    cursor: pointer;
+}
 
 @media (max-width: 760px) {
     .profile {
