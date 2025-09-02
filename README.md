@@ -1,3 +1,5 @@
+> Repositório em desenvolvimento até dia 30/09...
+
 **<h2>📘 Documentação do Portfólio de PWFE (Programação Web Front-End)</h2>**
 
 ###
