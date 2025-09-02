@@ -120,7 +120,7 @@ resumos, exercícios e respostas!
 | Vermelho | `#DC2626` |   🔴   |
 | Vermelho | `#D94747` |   🔴   |
 | Preto    | `#000000` |   ⚫   |
-| Cinza    | `#696969` |   🔘   |
+| Cinza    | `#696969` |  NULL  |
 
 > As cores repetidas, possuem tonalidades diferentes!
 
