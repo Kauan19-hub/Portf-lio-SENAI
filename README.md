@@ -35,6 +35,14 @@ com foco em estruturação de páginas, estilização e interatividade. Com isso
 
 ###
 
+> OBS: Caso tenha a extensão 'Live Server' instalado, tente abrir o portifólio usando a extensão! Caso não tenha, instale-o em:
+
+---
+
+✅- Extensões, CTRL + SHIFT + X, Install
+
+###
+
 **<h2>🖥️ O que é HTML, CSS e JavaScript?</h2>**
 
 ###
