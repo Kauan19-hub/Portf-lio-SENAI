@@ -106,8 +106,8 @@ resumos, exercícios e respostas!
 
 ###
 
-| Cor      | Hex      | Preview |
-|----------|----------|---------|
+| Cor      | Código    | View    |
+|----------|-----------|---------|
 | Azul     | `#06B6D4` |   🔵   |
 | Azul     | `#3267D9` |   🔵   |
 | Branco   | `#FFFFFF` |   ⚪   |
