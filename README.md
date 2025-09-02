@@ -98,7 +98,7 @@ resumos, exercícios e respostas!
 
 ###
 
-`'Poppins', sans-serif`
+`'Poppins', sans-serif` | `'Bold', sans-serif`
 
 ###
 
