@@ -116,6 +116,10 @@ resumos, exercícios e respostas!
 | Laranja  | `#F59E0B` |   🟠   |
 | Verde    | `#16A34A` |   🟢   |
 | Vermelho | `#DC2626` |   🔴   |
+| Vermelho | `#D94747` |   🔴   |
+| Preto    | `#000000` |   ⚫   |
+
+> As cores repetidas, possuem tonalidades diferentes!
 
 ###
 
