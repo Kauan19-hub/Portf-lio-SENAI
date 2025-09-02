@@ -135,7 +135,9 @@ resumos, exercícios e respostas!
 - **Roxo + Azul**: Tecnologia avançada, inovação e imaginação;
 - **Laranja**: Energia e criatividade + alerta;
 - **Vermelho**: Mix de amor e fúria + erro;
-- **Verde:** Saúde e vitalidade + sucesso;
+- **Verde**: Saúde e vitalidade + sucesso;
+- **Preto**: Mistério e poder;
+- **Cinza**: Equilíbrio e neutralidade;
 - **Efeito**: Futurista e moderno.
 
 ###
