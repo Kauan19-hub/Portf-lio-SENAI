@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu Portifólio | PWFE</title>
+    <link rel="stylesheet" href="/CSS/Estilo Geral.css" />
+    <link rel="icon" href="/Imgs/Logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  </head>
+
+  <body>
+    <nav class="navegation">
+      <ul>
+        <li>
+          <a href="#start">Início</a>
+        </li>
+
+        <li>
+          <a href="#about">Sobre</a>
+        </li>
+
+        <li>
+          <a href="#exercises">Tarefas</a>
+        </li>
+      </ul>
+
+      <div class="logo-img">
+        <img src="/Imgs/Logo.png" alt="logo do portfólio" />
+      </div>
+    </nav>
+
+    <header id="start" class="header">
+      <div class="profile">
+        <img src="/Imgs/MyImg.jpg" class="float-img" alt="minha foto" />
+        <div class="text-info">
+          <h2>Kauan Vinícius</h2>
+          <p>Full-Stack Developer, DS - Robert Bosch</p>
+        </div>
+      </div>
+    </header>
+
+    <section id="about" class="about">
+      <h2 class="subtitulo">SOBRE O <span>PORTFÓLIO</span></h2>
+      <div class="subbox">
+        <p class="subpar">
+          Olá! Seja bem-vindo(a). Este portifólio foi desenvolvido para
+          apresentar atividades de forma mais interativa e, com foco em
+          aprimorar meus conhecimentos em Front-End e aprender mais sobre
+          projetos e desenvolvimento de sites.
+        </p>
+      </div>
+    </section>
+
+    <section id="exercises">
+      <div id="carousel" class="carousel">
+        <div class="card">
+          <h2>1° Exercício</h2>
+          <p class="question">Diga-me a sua idade!</p>
+          <div class="answer-box">
+            <input
+              type="number"
+              id="idade"
+              placeholder="Digite sua resposta..."
+            />
+            <button onclick="checkIdade()">Verificar</button>
+          </div>
+          <p class="result" id="r1"></p>
+        </div>
+
+        <div class="card">
+          <h2>2° Exercício</h2>
+          <p class="question">Digite um número inteiro!</p>
+          <div class="answer-box">
+            <input
+              type="number"
+              id="numero"
+              placeholder="Digite sua resposta..."
+            />
+            <button onclick="checkParImpar()">Verificar</button>
+          </div>
+          <p class="result" id="r2"></p>
+        </div>
+
+        <div class="card">
+          <h2>3° Exercício</h2>
+          <p class="question">Digite 2 números!</p>
+          <div class="answer-box">
+            <input
+              type="number"
+              id="num1"
+              placeholder="Digite a primeira resposta..."
+            />
+            <input
+              type="number"
+              id="num2"
+              placeholder="Digite a segunda resposta..."
+            />
+            <button onclick="checkMaior()">Verificar</button>
+          </div>
+          <p class="result" id="r3"></p>
+        </div>
+
+        <div class="card">
+          <h2>4° Exercício</h2>
+          <p class="question">Digite uma senha!</p>
+          <div class="answer-box">
+            <input
+              type="text"
+              id="senha"
+              placeholder="Digite sua resposta..."
+            />
+            <button onclick="checkSenha()">Verificar</button>
+          </div>
+          <p class="result" id="r4"></p>
+        </div>
+
+        <div class="card">
+          <h2>5° Exercício</h2>
+          <p class="question">
+            Digite a temperatura atual em graus Celsius (°C)!
+          </p>
+          <div class="answer-box">
+            <input
+              type="text"
+              id="temperatura"
+              placeholder="Digite sua resposta..."
+            />
+            <button onclick="checkTemper()">Verificar</button>
+          </div>
+          <p class="result" id="r5"></p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="networks-icons">
+      <div class="share">
+        <a href="https://www.instagram.com/kauanl01/?igsh=MTA1czhyN3liM3l0NQ%3D%3D#" alt="instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://github.com/Kauan19-hub" alt="github">
+           <i class="fab fa-github"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/kauan-vin%C3%ADcius?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" alt="linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </footer>
+
+    <script src="/JavaScript Geral/Carousel.js"></script>
+  </body>
+</html>
