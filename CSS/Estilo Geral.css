@@ -139,17 +139,6 @@ html {
 
 }
 
-.logo-img img {
-    align-items: left;
-    justify-content: flex;
-    width: 55px;
-    position: relative;
-    margin-bottom: 23px;
-    margin-top: -60px;
-    z-index: 1000;
-
-}
-
 .header p {
     color: var(--text);
 
