@@ -88,7 +88,7 @@ resumos, exercícios e respostas!
 
 - O que é o projeto;
 - Design seguindo padrão;
-- Interface de facil compreensão; 
+- Interface de fácil compreensão; 
 - Layout responsivo;
 - Desempenho natural;
 - Presença;
