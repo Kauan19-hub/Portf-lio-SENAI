@@ -17,7 +17,7 @@ com foco em estruturação de páginas, estilização e interatividade. Com isso
 - Estilização com CSS;
 - Interatividade com JavaScript;
 - Princípios básicos de UI/UX;
-- Ferramenta de design como Figma;
+- Ferramenta de design como o Figma;
 - Organização de projetos com VS Code;
 - Documentação em GitHub.
 
@@ -32,7 +32,6 @@ com foco em estruturação de páginas, estilização e interatividade. Com isso
 ├── 📄 Esilo.css<br>
 ├── 📄 Index.html<br>
 ├── 📄 JavaScript Geral.js<br>
-├── 📄 JavaScript Interaçao.js<br>
 └── 📄 README.md<br>    
 
 ###
