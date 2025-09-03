@@ -55,7 +55,7 @@ Define os títulos, listas, parágrafos, imagens links e etc...<br>
 Ela auxilia nas cores, botões, estilo visual, espaçamento, posicionamento, e responsividade.<br>
 
 3️⃣- **JavaScript (JS)**: Linguagem de programação utilizada para adicionar animação e interatividade à página.<br>
-Permite manipular o dom, responder eventos, validar formulários, entre outros...
+Permite manipular o DOM, responder eventos, validar formulários, entre outros...
 
 ###
 
@@ -63,7 +63,7 @@ Permite manipular o dom, responder eventos, validar formulários, entre outros..
 
 ###
 
-Este projeto de portfólio está sendo desenvolvido com o objetivo de aplicar e melhorar meus conhecimentos com Front-End<br>
+Este projeto de portifólio está sendo desenvolvido com o objetivo de aplicar e melhorar meus conhecimentos com Front-End<br>
 criando uma página web completa para entrega. Um projeto fácil onde contém um pequeno contexto, explicações, documentações<br>
 resumos, exercícios e respostas!
 
