@@ -289,7 +289,7 @@ footer.networks-icons {
 
 .container {
     display: flex;
-    gap: 16px;
+    gap: 6px;
     text-align: center;
     justify-content: center;
 
@@ -298,7 +298,6 @@ footer.networks-icons {
 .instagram {
     gap: 13px;
     margin: 5px;
-    border: 2px solid var(--text);
     border-radius: 50%;
    
 }
@@ -308,13 +307,13 @@ footer.networks-icons {
     color: var(--text);
     padding: 7px;
     border-radius: 50%;
-    transition: 0.5s;
+    transition: 0.4s;
     
 
 }
 
 .instagram i:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     background-color: var(--instagram);
     cursor: pointer;
     box-shadow: 0 2px 14px rgba(204, 204, 204, 0.541);
@@ -324,9 +323,7 @@ footer.networks-icons {
 .github {
     gap: 13px;
     margin: 5px;
-    border: 2px solid var(--text);
     border-radius: 50%;
-    
 
 }
 
@@ -335,12 +332,12 @@ footer.networks-icons {
     color: var(--text);
     padding: 7px;
     border-radius: 50%;
-    transition: 0.5s;
+    transition: 0.4s;
    
 }
 
 .github i:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     background-color: var(--github);
     cursor: pointer;
     box-shadow: 0 2px 14px rgba(204, 204, 204, 0.541);
@@ -349,9 +346,8 @@ footer.networks-icons {
 
 .linkedin {
     margin: 5px;
-    border: 2px solid var(--text);
     border-radius: 50%;
-    
+
 }
 
 .linkedin i {
@@ -359,12 +355,12 @@ footer.networks-icons {
     color: var(--text);
     padding: 7px;
     border-radius: 50%;
-    transition: 0.5s;
+    transition: 0.4s;
     
 }
 
 .linkedin i:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     background-color: var(--linkedin);
     cursor: pointer;
     box-shadow: 0 2px 14px rgba(204, 204, 204, 0.541);
