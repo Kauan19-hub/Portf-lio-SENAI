@@ -4,6 +4,23 @@ const carousel = document.getElementById('carousel')
 
 let attemps = 5
 
+function enter(input, checkFunction) {
+    const input_box = document.getElementById(input)
+    input_box.addEventListener('keydown', function(event) {
+        if (event.key === "Enter") {
+            checkFunction()
+
+        }
+    })
+}
+
+enter('idade', checkIdade)
+enter('numero', checkParImpar)
+enter('num1', checkMaior)
+enter('num2', checkMaior)
+enter('senha', checkSenha)
+enter('temperatura', checkTemper)
+
 function showCards(Index) {
     carousel.style.transform = `translateX(-${Index * 100}%)`
 
