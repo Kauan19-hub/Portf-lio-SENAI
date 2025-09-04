@@ -21,6 +21,7 @@ enter('num2', checkMaior)
 enter('senha', checkSenha)
 enter('temperatura', checkTemper)
 enter('tabuada', checkTabu)
+enter('jokenpo', checkJokenpo)
 
 function showCards(Index) {
     carousel.style.transform = `translateX(-${Index * 100}%)`
@@ -33,6 +34,7 @@ function updateResult(feedback, text, type) {
     feedback.classList.add(type, 'show')
 
     setTimeout(() => feedback.classList.remove('show'), 1000)
+
 }
 
 showCards(caroul)
@@ -49,6 +51,7 @@ function checkIdade() {
 
     } else {
         updateResult(feedback, "Idade inválida. Tente novamente", "error")
+
     }
 }
 
@@ -61,6 +64,7 @@ function checkParImpar() {
 
     } else {
         updateResult(feedback, `O número ${num} é ímpar`, "warning")
+
     }
 }
 
@@ -77,6 +81,7 @@ function checkMaior() {
 
     } else {
         updateResult(feedback, `O número ${num2} é maior`, "warning")
+
     }
 }
 
@@ -119,6 +124,7 @@ function checkTemper() {
    
     } else {
          updateResult(feedback, "Ambiente extremamente quente", "error")
+
     }
        
 }
@@ -136,6 +142,7 @@ function checkTabu() {
     let result = `Tabuada do ${number}:<br>`
     for (let i = 1; i <= 10; i++) {
         result += `${number} x ${i} = ${number * i}<br>`
+
     }
 
     feedback.innerHTML = result
@@ -143,11 +150,50 @@ function checkTabu() {
     feedback.classList.add('info', 'show')
 
     setTimeout(() => feedback.classList.remove('show'), 2000)
+
+}
+
+function checkJokenpo() {
+    const userChoices = document.getElementById('jokenpo').value.trim().toLowerCase()
+    const feedback = document.getElementById('r7')
+
+    const choices = ['pedra', 'papel', 'tesoura']
+    const userChoice = choices.indexOf(userChoices)
+
+    if (userChoice === -1) {
+        updateResult(feedback, "Inválido. Escolha entre Pedra, Papel ou Tesoura", "error")
+        return
+
+    }
+
+    const computerChoice = Math.floor(Math.random() * 3)
+    const userSTR = choices[userChoice]
+    const pcSTR = choices[computerChoice]
+
+    let result = `Jogador: ${userSTR}, Máquina: ${pcSTR}<br>`
+
+    if (userChoice === computerChoice) {
+        updateResult(feedback, "Empatado!", "info")
+
+    } else if (
+        (userChoice === 0 && computerChoice === 2) ||
+        (userChoice === 1 && computerChoice === 0) ||
+        (userChoice === 2 && computerChoice === 1)
+
+    ) {
+        
+        updateResult(feedback, "Jogador venceu!", "success")
+
+    } else {
+        updateResult(feedback, "A máquina venceu!", "error")
+
+    }   
 }
 
 function resultAnimate(resposta) {
     resposta.classList.remove('show')
     void resposta.offsetwidth
     resposta.classList.add('show')
+
 }
 
