@@ -1,4 +1,4 @@
-let caroul= 0;
+let caroul = 0;
 const cards = document.querySelectorAll('.card')
 const carousel = document.getElementById('carousel')
 
@@ -41,14 +41,20 @@ function updateResult(feedback, text, type) {
 showCards(caroul)
 
 function checkIdade() {
-    const idade = Number(document.getElementById('idade').value)
+    const idade = document.getElementById('idade').value.trim()
     const feedback = document.getElementById('r1')
 
-    if (isNaN(idade) || idade < 0 ) {
-        updateResult(feedback, "Inválido. Digite um número válido", "error")
+    if (idade === "") {
+        updateResult(feedback, "Inválido. Por favor, digite sua idade", "error")
         return
-    
-    } else if (idade >= 0 && idade < 18) {
+
+    }
+
+    const idade2 = Number(idade)
+    if (!Number.isInteger(idade2) || idade < 0) {
+        updateResult(feedback, "Inválido. O número precisa ser inteiro", "error")
+
+    } if (idade >= 0 && idade < 18) {
         updateResult(feedback, "Menor de idade", "warning")
 
     } else if (idade >= 18 && idade <= 100) {
@@ -61,9 +67,22 @@ function checkIdade() {
 }
 
 function checkParImpar() {
-    const num = parseInt(document.getElementById('numero').value)
+    const num = document.getElementById('numero').value.trim()
     const feedback = document.getElementById('r2')
 
+    if (num === "") {
+        updateResult(feedback, "Por favor, digite um número", "error")
+        return
+
+    }
+
+    const numero = Number(num)
+    if (!Number.isInteger(numero)) {
+        updateResult(feedback, "Inválido. O número precisa ser inteiro", "error")
+        return
+
+    }
+        
     if (num % 2 === 0) {
         updateResult(feedback, `O número ${num} é par`, "success")
 
@@ -74,10 +93,24 @@ function checkParImpar() {
 }
 
 function checkMaior() {
-    const num1 = parseInt(document.getElementById('num1').value)
-    const num2 = parseInt(document.getElementById('num2').value)
+    const num1 = document.getElementById('num1').value.trim()
+    const num2 = document.getElementById('num2').value.trim()
     const feedback = document.getElementById('r3')
-    
+
+    if (num1 === "" && num2 === "") {
+        updateResult(feedback, "Preencha os dois campos.", "error")
+        return
+
+    }
+
+    const numero1 = Number(num1)
+    const numero2 = Number(num2)
+    if (isNaN(numero1) || isNaN(numero2)) {
+        updateResult(feedback, "Erro, números inválidos", "error")
+        return
+
+    }
+
     if (num1 === num2) {
         updateResult(feedback, `${num1} e ${num2} são iguais`, "info")
 
@@ -92,8 +125,15 @@ function checkMaior() {
 
 function checkSenha() {
     const senha = 202525
-    const tent = parseInt(document.getElementById('senha').value)
+    const input = document.getElementById('senha').value.trim()
+    const tent = Number(input)
     const feedback = document.getElementById('r4')
+
+    if (input === "") {
+        updateResult(feedback, "Inválido. Digite uma senha, por favor", "error")
+        return
+
+    }
 
     if (tent === senha) {
         updateResult(feedback, "Seu acesso está permitido", "success")
@@ -112,8 +152,14 @@ function checkSenha() {
 }
 
 function checkTemper() {
-    const temperatura = parseFloat(document.getElementById('temperatura').value)
+    const temperatura = document.getElementById('temperatura').value.trim()
     const feedback = document.getElementById('r5')
+
+    if (temperatura === "") {
+        updateResult(feedback, "Por favor, digite a temperatura atual", "error")
+        return
+
+    }
 
     if (temperatura > 0 && temperatura < 18) {
         updateResult(feedback, "Ambiente frio", "info")
@@ -135,11 +181,24 @@ function checkTemper() {
 }
 
 function checkTabu() {
-    const number = parseInt(document.getElementById('tabuada').value)
+    const input = document.getElementById('tabuada').value
+    const number = parseFloat(input)
     const feedback = document.getElementById('r6')
 
-    if (isNaN(number) || number < 1 || number > 9) {
-        updateResult(feedback, "Erro. Digite um número de 1 a 9", "error")
+    if (!Number.isInteger(number)) {
+        updateResult(feedback, "Inválido. O número precisa ser inteiro", "error")
+        return
+
+    }
+
+    if (isNaN(number)) {
+        updateResult(feedback, "Erro. Digite um número", "error")
+        return
+
+    }
+
+    if (number < 1 || number > 9) {
+        updateResult(feedback, "Inválido. Por favor, digite um número de 1 a 9", "error")
         return
 
     }
@@ -199,11 +258,24 @@ function checkJokenpo() {
 }
 
 function checkFatorial() {
-    const number = parseInt(document.getElementById('factor').value)
+    const input = document.getElementById('factor').value
+    const number = parseFloat(input)
     const feedback = document.getElementById('r8')
 
-    if (isNaN(number) || number < 0 ) {
-        updateResult(feedback, "Inválido. Digite um número válido", "error")
+    if (isNaN(number)) {
+        updateResult(feedback, "Digite um número válido", "error")
+        return
+
+    }
+
+    if (!Number.isInteger(number)) {
+        updateResult(feedback, "Erro, o número precisa ser inteiro", "error")
+        return
+
+    }
+
+    if (number < 0) {
+        updateResult(feedback, "Número inválido. Ele não pode ser negativo", "error")
         return
 
     }
