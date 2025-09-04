@@ -22,6 +22,7 @@ enter('senha', checkSenha)
 enter('temperatura', checkTemper)
 enter('tabuada', checkTabu)
 enter('jokenpo', checkJokenpo)
+enter('factor', checkFatorial)
 
 function showCards(Index) {
     carousel.style.transform = `translateX(-${Index * 100}%)`
@@ -43,7 +44,11 @@ function checkIdade() {
     const idade = Number(document.getElementById('idade').value)
     const feedback = document.getElementById('r1')
 
-    if (idade >= 0 && idade < 18) {
+    if (isNaN(idade) || idade < 0 ) {
+        updateResult(feedback, "Inválido. Digite um número válido", "error")
+        return
+    
+    } else if (idade >= 0 && idade < 18) {
         updateResult(feedback, "Menor de idade", "warning")
 
     } else if (idade >= 18 && idade <= 100) {
@@ -174,6 +179,7 @@ function checkJokenpo() {
 
     if (userChoice === computerChoice) {
         updateResult(feedback, "Empatado!", "info")
+        return
 
     } else if (
         (userChoice === 0 && computerChoice === 2) ||
@@ -183,11 +189,33 @@ function checkJokenpo() {
     ) {
         
         updateResult(feedback, "Jogador venceu!", "success")
+        return
 
     } else {
         updateResult(feedback, "A máquina venceu!", "error")
+        return
 
     }   
+}
+
+function checkFatorial() {
+    const number = parseInt(document.getElementById('factor').value)
+    const feedback = document.getElementById('r8')
+
+    if (isNaN(number) || number < 0 ) {
+        updateResult(feedback, "Inválido. Digite um número válido", "error")
+        return
+
+    }
+
+    let factorial = 1
+    for (let i = 1; i <= number; i++) {
+        factorial *= i
+
+    }
+
+    updateResult(feedback, `Fatorial de ${number} é ${factorial}`, "success")
+    
 }
 
 function resultAnimate(resposta) {
