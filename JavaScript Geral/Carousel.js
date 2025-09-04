@@ -20,6 +20,7 @@ enter('num1', checkMaior)
 enter('num2', checkMaior)
 enter('senha', checkSenha)
 enter('temperatura', checkTemper)
+enter('tabuada', checkTabu)
 
 function showCards(Index) {
     carousel.style.transform = `translateX(-${Index * 100}%)`
@@ -120,6 +121,28 @@ function checkTemper() {
          updateResult(feedback, "Ambiente extremamente quente", "error")
     }
        
+}
+
+function checkTabu() {
+    const number = parseInt(document.getElementById('tabuada').value)
+    const feedback = document.getElementById('r6')
+
+    if (isNaN(number) || number < 1 || number > 9) {
+        updateResult(feedback, "Erro. Digite um número de 1 a 9", "error")
+        return
+
+    }
+
+    let result = `Tabuada do ${number}:<br>`
+    for (let i = 1; i <= 10; i++) {
+        result += `${number} x ${i} = ${number * i}<br>`
+    }
+
+    feedback.innerHTML = result
+    feedback.classList.remove('success', 'error', 'warning', 'info')
+    feedback.classList.add('info', 'show')
+
+    setTimeout(() => feedback.classList.remove('show'), 2000)
 }
 
 function resultAnimate(resposta) {
