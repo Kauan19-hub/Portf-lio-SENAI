@@ -1,29 +1,28 @@
 > Repository under development until September 30th... 
 
-**<h2>📘 Documentação do Portfólio de PWFE (Programação Web Front-End)</h2>**
+**<h2>📘 PWFE Portfolio Documentation (Front-End Web Programming)</h2>**
 
 ###
 
-**<h2>📌 Contexto:</h2>**
+**<h2>📌 Context:</h2>**
 
 ###
 
-Durante o desenvolvimento do portfólio, aplicamos os principais conceitos de desenvolvimento web no Front-End<br>
-com foco em estruturação de páginas, estilização e interatividade. Com isso, aprendemos sobre: 
+During the development of the portfolio, we applied the main concepts of web development to the front-end, focusing on page structuring, styling, and interactivity. Through this, we learned about: 
 
 ---
 
-- Estrutura básica de HTML;
-- Estilização com CSS;
-- Interatividade com JavaScript;
-- Princípios básicos de UI/UX;
-- Ferramenta de design como o Figma;
-- Organização de projetos com VS Code;
-- Documentação em GitHub.
+- Basic HTML structure;
+- Styling with CSS;
+- Interactivity with JavaScript;
+- Basic UI/UX principles;
+- Design tools like Figma;
+- Project organization with VS Code;
+- Documentation on GitHub. 
 
 ###
 
-**<h2>📂 Organização dos arquivos:</h2>**
+**<h2>📂 File organization :</h2>**
 
 ###
 
@@ -36,66 +35,49 @@ com foco em estruturação de páginas, estilização e interatividade. Com isso
 
 ###
 
-> OBS: Caso tenha a extensão 'Live Server' instalado, tente abrir o portifólio usando a extensão! Caso não tenha, instale-o em:
-
+> OBS: If you have the 'Live Server' extension installed, try opening the portfolio using the extension! If not, install it at:
+ 
 ---
 
-✅- Extensões, CTRL + SHIFT + X, Install
+✅- Extensions , CTRL + SHIFT + X, Install
 
 ###
 
-**<h2>🖥️ O que é HTML, CSS e JavaScript?</h2>**
+**<h2>🗃️ Summary:</h2>**
 
 ###
 
-1️⃣- **HTML (HyperText Markup Language)**: Linguagem de marcação usada para estruturar o conteúdo da página.<br>
-Define os títulos, listas, parágrafos, imagens links e etc...<br>
-
-2️⃣- **CSS (Cascading Style Sheets)**: Linguagem de estilo usada para definir a aparência dos elementos HTML.<br>
-Ela auxilia nas cores, botões, estilo visual, espaçamento, posicionamento, e responsividade.<br>
-
-3️⃣- **JavaScript (JS)**: Linguagem de programação utilizada para adicionar animação e interatividade à página.<br>
-Permite manipular o DOM, responder eventos, validar formulários, entre outros...
+This portfolio project was developed with the goal of applying and improving my Front-End knowledge by creating a complete web page for delivery. It's an easy project that includes a brief context, explanations, documentation, summaries, exercises, and answers! 
 
 ###
 
-**<h2>🗃️ Resumo:</h2>**
+**<h2>⚙️ Tools Used:</h2>**
+ 
+###
+
+✅ Figma: Prototyping planning ;<br>
+✅ HTML: Semantic base;<br>
+✅ CSS: Stylization and responsiveness;<br>
+✅ JS: Interactivity;<br>
+✅ GitHub: Documentation;<br>
+✅ VS Code: Code editor where the portfolio was developed.
 
 ###
 
-Este projeto de portifólio está sendo desenvolvido com o objetivo de aplicar e melhorar meus conhecimentos com Front-End<br>
-criando uma página web completa para entrega. Um projeto fácil onde contém um pequeno contexto, explicações, documentações<br>
-resumos, exercícios e respostas!
+**<h2>🎖 Objectives:</h2>**
 
 ###
 
-**<h2>⚙️ Ferramentas Utilizadas:</h2>**
+- What is the project;
+- Standard-based design;
+- Easy-to-understand interface;
+- Responsive layout;
+- Natural performance;
+- Presence;
 
 ###
 
-✅ Figma: Planejamento de prototipagem;<br>
-✅ HTML: Base semântico;<br>
-✅ CSS: Estilização e responsividade;<br>
-✅ JS: Interatividade;<br>
-✅ GitHub: Documentação;<br>
-✅ VS Code: Editor de código onde foi desenvolvido o portfólio.
-
-###
-
-**<h2>🎖 Objetivos:</h2>**
-
-###
-
-- O que é o projeto;
-- Design seguindo padrão;
-- Interface de fácil compreensão; 
-- Layout responsivo;
-- Desempenho natural;
-- Presença;
-
-###
-
-**<h2>📗 Fonte de Texto Usada:</h2>**
+**<h2>📗 Text Font Used:</h2>**
 
 ###
 
@@ -103,63 +85,62 @@ resumos, exercícios e respostas!
 
 ###
 
-**<h2>🎨 Paleta de Cores:</h2>**
+**<h2>🎨 Color Palette:</h2>**
 
 ###
 
-| Cor      | Código    | View    |
+| Color | Code | View |
 |----------|-----------|---------|
-| Azul     | `#06B6D4` |   🔵   |
-| Azul     | `#3267D9` |   🔵   |
-| Branco   | `#FFFFFF` |   ⚪   |
-| Roxo     | `#2E1065` |   🟣   |
-| Roxo     | `#8B5CF6` |   🟣   |
-| Laranja  | `#F59E0B` |   🟠   |
-| Verde    | `#16A34A` |   🟢   |
-| Vermelho | `#DC2626` |   🔴   |
-| Vermelho | `#D94747` |   🔴   |
-| Preto    | `#000000` |   ⚫   |
-| Cinza    | `#696969` |  NULL  |
+| Blue | `#06B6D4` | 🔵 |
+| Blue | `#3267D9` | 🔵 |
+| White | `#FFFFFF` | ⚪ |
+| Purple | `#2E1065` | 🟣 |
+| Purple | `#8B5CF6` | 🟣 |
+| Orange | `#F59E0B` | 🟠 |
+| Green | `#16A34A` | 🟢 |
+| Red | `#DC2626` | 🔴 |
+| Red | `#D94747` | 🔴 |
+| Black | `#000000` | ⚫ |
+| Gray | `#696969` | NULL |
 
-> As cores repetidas, possuem tonalidades diferentes!
-
-###
-
-**<h2>‼️Significado e Sensações:</h2>**
+> Repeated colors have different shades!
 
 ###
 
-- **Roxo**: Mistério, inovação e criatividade;
-- **Azul**: Confiança e profissionalismo;
-- **Roxo + Azul**: Tecnologia avançada, inovação e imaginação;
-- **Laranja**: Energia e criatividade + alerta;
-- **Vermelho**: Mix de amor e fúria + erro;
-- **Verde**: Saúde e vitalidade + sucesso;
-- **Preto**: Mistério e poder;
-- **Cinza**: Equilíbrio e neutralidade;
-- **Efeito**: Futurista e moderno.
+**<h2>‼️Meaning and Sensations:</h2>**
+
+###
+
+- **Purple**: Mystery, innovation, and creativity; - **Blue**: Trust and professionalism;
+- **Purple + Blue**: Advanced technology, innovation, and imagination;
+- **Orange**: Energy and creativity + alertness;
+- **Red**: A mix of love and fury + error;
+- **Green**: Health and vitality + success;
+- **Black**: Mystery and power;
+- **Gray**: Balance and neutrality;
+- **Effect**: Futuristic and modern.
 
 ###
 
 <div align="left">
   <a href="https://www.figma.com/design/mzNPfg04N3Rg2ru2Y7TXth/Paleta-de-Cores-e-Logo?t=rnE1sR9BrjeKzGUa-0" target="blank">
-   <img src="https://img.shields.io/badge/Paleta de Cores-2563EB?logo=figma&logoColor=white&style=for-the-badge" height="35" alt="figma logo" title="Paleta de Cores"  />
+   <img src="https://img.shields.io/badge/Color Palette-2563EB?logo=figma&logoColor=white&style=for-the-badge" height="35" alt="figma logo" title="Color Palette" />
   </a>
   <img width="2">
-  <a href="https://www.figma.com/design/bKf5APHcLWteqlwIexM6NU/Logo?node-id=0-1&p=f&t=uKndI4FQIfiFqN9q-0 target="blank"> 
-   <img src="https://img.shields.io/badge/Logotipo-2563EB?logo=figma&logoColor=white&style=for-the-badge" height="35" alt="figma logo" title="Logotipo" />
-  </a>
+  <a href="https://www.figma.com/design/bKf5APHcLWteqlwIexM6NU/Logo?node-id=0-1&p=f&t=uKndI4FQIfiFqN9q-0 target="blank">
+<img src="https://img.shields.io/badge/Logotipo-2563EB?logo=figma&logoColor=white&style=for-the-badge" height="35" alt="figma logo" title="Logotipo" />
+</a>
 </div>
 
 </div>
 
 ###
 
-**<h2>🤝 Contribuições:</h2>**
+**<h2>🤝 Contributions:</h2>**
 
 ###
 
-Pull Requests são bem-vindos! Para mudanças, sujestões, por favor, abra um **issue** para discutirmos o que você gostaria de alterar, ou contribuir!
+Pull Requests are welcome! For changes or suggestions, please open an issue to discuss what you would like to change or contribute!
 
 ###
 
@@ -172,13 +153,14 @@ Pull Requests são bem-vindos! Para mudanças, sujestões, por favor, abra um **
   <img width="1" />
   <img src="https://skillicons.dev/icons?i=vscode" height="27" alt="vscode logo" title="Visual Studio Code" />
   <img width="1" />
-  <img src="https://skillicons.dev/icons?i=github" height="27" alt="github logo" title="Github"  />
+  <img src="https://skillicons.dev/icons?i=github" height="27" alt="github logo" title="Github" />
   <img width="1" />
   <img src="https://skillicons.dev/icons?i=figma" height="27" alt="figma logo" title="Figma" />
 </div>
 
-<h6>Duração: 3 meses.</h6>
+###
 
+<h6>Duration: 3 months</h6>
 
 
 
