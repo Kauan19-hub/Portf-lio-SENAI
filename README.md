@@ -111,7 +111,8 @@ This portfolio project was developed with the goal of applying and improving my 
 
 ###
 
-- **Purple**: Mystery, innovation, and creativity; - **Blue**: Trust and professionalism;
+- **Purple**: Mystery, innovation, and creativity;
+- **Blue**: Trust and professionalism;
 - **Purple + Blue**: Advanced technology, innovation, and imagination;
 - **Orange**: Energy and creativity + alertness;
 - **Red**: A mix of love and fury + error;
