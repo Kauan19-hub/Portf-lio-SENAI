@@ -39,7 +39,7 @@ During the development of the portfolio, we applied the main concepts of web dev
  
 ---
 
-✅- Extensions , CTRL + SHIFT + X, Install
+✅- `Extensions`, `CTRL` + `SHIFT` + `X`, Install
 
 ###
 
