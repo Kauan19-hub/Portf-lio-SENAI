@@ -77,21 +77,19 @@ html {
 }
 
 .menu_responsive {
-    position: relative;
-    border: none;
-    width: 30px;
-    height: 21px;
     display: none;
-    margin: 18px;
-    background: none;
-    border-top: 3px solid var(--text);
+    position: relative;
+    width: 35px;
+    height: 25px;
+    z-index: 1300;
+    margin: 12px;
     cursor: pointer;
 
 }
 
 .menu_responsive span {
     position: absolute;
-    height: 4px;
+    height: 3px;
     width: 100%;
     background: var(--text);
     border-radius: 2px;
@@ -105,18 +103,18 @@ html {
 }
 
 .menu_responsive span:nth-child(2) {
-    top: 9px;
+   top: 10px;
 
 }
 
 .menu_responsive span:nth-child(3) {
-    top: 18px;
+    top: 20px;
 
 }
 
 .navegation.active .menu_responsive span:nth-child(1) {
     transform: rotate(44deg);
-    top: 8px;
+    top: 9px;
 
 }
 
@@ -127,39 +125,46 @@ html {
 
 .navegation.active .menu_responsive span:nth-child(3) {
     transform: rotate(-44deg);
-    top: 8px;
+    top: 9px;
 
 }
 
 @media (max-width: 750px) {
     .menu_responsive {
         display: block;
+
     }
+
     .navegation ul {
         position: fixed;
         top: 0;
-        left: 0;
+        left: -100%;
         width: 60vw;
         height: 100vh;
-        clip-path: circle(0px at 10% -10%);
-        transition: clip-path 0.5s ease-out;
+        transition: left 0.4s ease;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
         gap: 20px;
-        padding-left: 19px;
-        pointer-events: none;
+        z-index: 1200;
+        margin: 0;
+        padding-left: 0;
+        background-color: var(--secondary);
 
     }
 
     .navegation.active ul {
-        clip-path: circle(1500px at 10% -10%);
-        pointer-events: all;
+        left: 0;
+        padding-left: 0px;
 
     }
 
     .navegation ul li a {
-        font-size: 1rem;
+        font-size: 1.1rem;
+        width: 100%;
+        display: block;
+        padding: 9px 20px;
+      
     }
 }
 
@@ -168,49 +173,38 @@ html {
     position: sticky;
     top: 0;
     z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 11px;
     
 }
 
 .navegation ul {
     display: flex;
     justify-content: center;
-    gap: 45px;
+    gap: 25px;
     align-items: center;
     list-style: none;
     padding: 0;
     margin: 0;
-    
-}
-
-.navbox {
-    border: 2px solid var(--text);
-    padding: 2px 28px;
-    border-radius: 20px;
-    margin: 10px;
-    width: 7rem;
-    transition: 0.5s;
-
-}
-
-.navbox:hover {
-    background-color: var(--secondary);
-    cursor: pointer;
-    transform: scale(1.04);
   
 }
 
 .navegation a {
     text-decoration: none;
     color: var(--text);
-    position: relative;
-    transition: 0.2s;
-    font-size: 1.01rem;
-    padding: 5px 0;
-    font-family: 'Bold' sans-serif;
+    font-size: 1rem;
+    padding: 9px 10px;
     cursor: pointer;
-   
+    transition: 0.2s;
+
 }
 
+.navegation a:hover { 
+    transform: scale(1.06);
+
+}
 .header img {
     width: 135px;
     height: 135px;
