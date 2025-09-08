@@ -164,7 +164,7 @@ function checkTemper() {
     if (temperatura > 0 && temperatura < 18) {
         updateResult(feedback, "Ambiente frio", "info")
 
-    } else if (temperatura <= 0) {
+    } else if (temperatura <= 0) { 
         updateResult(feedback, "Ambiente extremamente frio", "info")
 
     } else if (temperatura >= 18 && temperatura <= 25) {
@@ -297,3 +297,23 @@ function resultAnimate(resposta) {
 
 }
 
+function animateWrite(element, text, speed = 90) {
+    let i = 0
+    function writing() {
+        if (i < text.length) {
+            element.textContent += text.charAt(i)
+            i++
+
+            setTimeout(writing, speed)
+        }
+    }
+    writing()
+}
+
+const name_of_element= document.getElementById('type')
+animateWrite(name_of_element, 'Kauan Vinícius', 120)
+
+const navResponsive = document.querySelector('.menu_responsive')
+const nav = document.querySelector('.navegation')
+
+navResponsive.addEventListener('click', () => nav.classList.toggle('active'))
