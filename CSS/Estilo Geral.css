@@ -17,11 +17,11 @@
     --instagram: #D94747;
     --github: #000000;
     --linkedin: #1B58DD;
-    --copyright: #696969;
+    --copyright: #342f2f;
 }
 
 body {
-    background-color: var(--primary);
+    background: linear-gradient(#2E1065, #765fac);
     color: var(--text);
     line-height: 1.6;
 }
@@ -374,10 +374,9 @@ html {
     margin: 70px auto;
     border: 2px solid var(--info);
     border-radius: 16px;
-    backdrop-filter: blur(12px);
-    background-color: rgba(0, 0, 0, 0.10);
     box-shadow: 0 4px 13px rgba(0, 0, 0, 0.7);
     display: flex;
+    background-color: var(--primary);
     align-items: center;
     transition: 0.4s;
     gap: 1rem;
