@@ -93,7 +93,7 @@ html {
     width: 100%;
     background: var(--text);
     border-radius: 2px;
-    transition: 0.5s;
+    transition: 0.3s;
 
 }
 
@@ -149,7 +149,9 @@ html {
         z-index: 1200;
         margin: 0;
         padding-left: 0;
+        border-radius: 7px;
         background-color: var(--secondary);
+        border: 2px solid var(--text);
 
     }
 
