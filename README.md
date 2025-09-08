@@ -81,33 +81,10 @@ This portfolio project was developed with the goal of applying and improving my 
 
 ###
 
-`'Poppins', sans-serif` | `'Bold', sans-serif`
-
+`'Poppins', sans-serif`
 ###
 
-**<h2>🎨 Color Palette:</h2>**
-
-###
-
-| Color | Code | View |
-|----------|-----------|---------|
-| Blue | `#06B6D4` | 🔵 |
-| Blue | `#3267D9` | 🔵 |
-| White | `#FFFFFF` | ⚪ |
-| Purple | `#2E1065` | 🟣 |
-| Purple | `#8B5CF6` | 🟣 |
-| Orange | `#F59E0B` | 🟠 |
-| Green | `#16A34A` | 🟢 |
-| Red | `#DC2626` | 🔴 |
-| Red | `#D94747` | 🔴 |
-| Black | `#000000` | ⚫ |
-| Gray | `#696969` | NULL |
-
-> Repeated colors have different shades!
-
-###
-
-**<h2>‼️Meaning and Sensations:</h2>**
+**<h2>‼️Meaning and Sensations of Colors:</h2>**
 
 ###
 
