@@ -30,7 +30,7 @@ During the development of the portfolio, we applied the main concepts of web dev
 ├── 📄 VSCode<br>
 ├── 📄 Esilo.css<br>
 ├── 📄 Index.html<br>
-├── 📄 JavaScript Geral.js<br>
+├── 📄 Scripts.js<br>
 └── 📄 README.md<br>    
 
 ###
