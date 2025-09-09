@@ -110,9 +110,11 @@ This portfolio project was developed with the goal of applying and improving my 
 </a>
 </div>
 
-</div>
-
 ###
+
+> The site works on different screen sizes.
+
+---
 
 **<h2>🤝 Contributions:</h2>**
 
