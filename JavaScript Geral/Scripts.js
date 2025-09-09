@@ -1,4 +1,4 @@
-let caroul = 0;
+let script = 0;
 const cards = document.querySelectorAll('.card')
 const carousel = document.getElementById('carousel')
 
@@ -14,6 +14,158 @@ function enter(input, checkFunction) {
     })
 }
 
+/* Validador de formulário. 8 caracteres, 1 especial, maiúsculas e minúsculas. 
+let inputNome = window.document.querySelector("input#nome");
+
+let inputCPF = window.document.querySelector("input#cpf");
+
+let inputEmail = window.document.querySelector("input#email")
+
+let inputSenha = window.document.querySelector("input#senha")
+
+let radioMasculino = window.document.querySelector("input#masculino")
+
+let radioFeminino = window.document.querySelector("input#feminino")
+
+let radioOutro = window.document.querySelector("input#outro")
+
+let checkTecnologia = window.document.querySelector("input#tecnologia")
+
+let checkEsportes = window.document.querySelector("input#esportes")
+
+let checkMusica = window.document.querySelector("input#musica")
+
+let selectEstado = window.document.querySelector("select#estado")
+
+let buttonSubmit = window.document.getElementsByTagName("button")[0];
+
+
+
+const verificaEspacos = (nome) =>{
+    let quantEspacos = 0;
+    
+    for(let ch of nome){
+        if(ch == ' ' ){
+            quantEspacos += 1
+        }
+    }
+
+    return quantEspacos
+}
+
+//Validação cpf
+const validacaoCPF = (cpf) => {
+    let numCPF=0;
+    let operador=10
+
+    let d10=0, d11=0
+
+    if(cpf.length == 11){
+        for(let i = 0; i < 9; i++){ 
+            numCPF += operador * parseInt(cpf[i] )
+            operador -= 1
+        }
+        
+        if(numCPF < 2){
+            d10 = 0
+        }else{
+            d10 = 11 - (numCPF % 11)
+        }
+        
+        
+        numCPF = 0
+        operador = 11
+
+        for (let i = 0; i < 10; i++) {
+            numCPF += operador * parseInt(cpf[i])
+            operador -= 1
+        }
+        
+        if (numCPF < 2) {
+            d11 = 0
+        } else {
+            d11 = 11 - (numCPF % 11)
+        }
+       
+        
+       if(cpf[9] != d10 || cpf[10] != d11){
+            alert("CPF inválido!")
+            return true
+       }
+
+
+    }else{
+        alert("CPF inválido!")
+        return true
+    }
+
+    return false
+}
+
+//Valores
+let nomeCompleto, cpf, email, masculino, feminino, tecnologia, esportes, musica
+
+let erros = false
+
+buttonSubmit.addEventListener("click", ()=>{
+    let nomeCompleto = inputNome.value 
+    let cpf=inputCPF.value
+    let email = inputEmail.value
+    let senha = inputSenha.value
+
+    let masculino = radioMasculino.checked
+    let feminino = radioFeminino.checked
+    let tecnologia = checkTecnologia.checked
+    let esportes = checkEsportes.checked
+    let musica = checkMusica.checked
+    
+    let estado = selectEstado.value
+
+    let gostos = []
+    let genero
+
+    //Validação de nome
+    if(nomeCompleto[0] != " " && verificaEspacos(nomeCompleto) == 1){
+
+    }else{
+        alert("Nome inválido!")
+        erros = true
+    }
+
+    //Validação de cpf
+    erros = validacaoCPF(cpf)
+
+    //genero
+    genero = masculino ? "masculino" : feminino ? "feminino" : "outro"
+
+    //gostos
+    if(tecnologia){
+        gostos.push("tecnologia")
+    }  
+
+    if(esportes){
+        gostos.push("Esportes")
+
+    }
+
+    if(musica){
+        gostos.push("Música")
+    }
+
+    
+    //estado
+    if(estado == ""){
+        alert("Selecione um estado!")
+        erros = true
+    }
+
+    if(!erros){
+        document.body.innerHTML = `<!DOCTYPE html>
+
+ SÓ EDITAR...
+*/
+
+
 enter('idade', checkIdade)
 enter('numero', checkParImpar)
 enter('num1', checkMaior)
@@ -23,6 +175,11 @@ enter('temperatura', checkTemper)
 enter('tabuada', checkTabu)
 enter('jokenpo', checkJokenpo)
 enter('factor', checkFatorial)
+enter('name', checkForms)
+enter('cpf', checkForms)
+enter('email', checkForms)
+enter('password', checkForms)
+enter('gender', checkForms)
 
 function showCards(Index) {
     carousel.style.transform = `translateX(-${Index * 100}%)`
@@ -38,7 +195,7 @@ function updateResult(feedback, text, type) {
 
 }
 
-showCards(caroul)
+showCards(script)
 
 function checkIdade() {
     const idade = document.getElementById('idade').value.trim()
@@ -93,32 +250,32 @@ function checkParImpar() {
 }
 
 function checkMaior() {
-    const num1 = document.getElementById('num1').value.trim()
-    const num2 = document.getElementById('num2').value.trim()
+    const numero1 = document.getElementById('num1').value.trim()
+    const numero2 = document.getElementById('num2').value.trim()
     const feedback = document.getElementById('r3')
 
-    if (num1 === "" && num2 === "") {
+    if (numero1 === "" && numero2 === "") {
         updateResult(feedback, "Preencha os dois campos.", "error")
         return
 
     }
 
-    const numero1 = Number(num1)
-    const numero2 = Number(num2)
-    if (isNaN(numero1) || isNaN(numero2)) {
+    const n1 = Number(numero1)
+    const n2 = Number(numero2)
+    if (isNaN(n1) || isNaN(n2)) {
         updateResult(feedback, "Erro, números inválidos", "error")
         return
 
     }
 
-    if (num1 === num2) {
-        updateResult(feedback, `${num1} e ${num2} são iguais`, "info")
+    if (n1 === n2) {
+        updateResult(feedback, `${n1} e ${n2} são iguais`, "info")
 
-    } else if (num1 > num2) {
-        updateResult(feedback, `O número ${num1} é maior`, "success")
+    } else if (n1 > n2) {
+        updateResult(feedback, `O número ${n1} é maior`, "success")
 
     } else {
-        updateResult(feedback, `O número ${num2} é maior`, "warning")
+        updateResult(feedback, `O número ${n2} é maior`, "warning")
 
     }
 }
@@ -231,22 +388,18 @@ function checkJokenpo() {
     }
 
     const computerChoice = Math.floor(Math.random() * 3)
-    const userSTR = choices[userChoice]
-    const pcSTR = choices[computerChoice]
+    const choices1 = userChoice
+    const choices2 = computerChoice
 
-    let result = `Jogador: ${userSTR}, Máquina: ${pcSTR}<br>`
-
-    if (userChoice === computerChoice) {
+    if (choices1 === choices2) {
         updateResult(feedback, "Empatado!", "info")
         return
 
     } else if (
-        (userChoice === 0 && computerChoice === 2) ||
-        (userChoice === 1 && computerChoice === 0) ||
-        (userChoice === 2 && computerChoice === 1)
+        (choices1 === 0 && choices2 === 2) || (choices1 === 1 && choices2 === 0) || (choices1 === 2 && choices2 === 1)
 
     ) {
-        
+    
         updateResult(feedback, "Jogador venceu!", "success")
         return
 
@@ -310,7 +463,18 @@ function animateWrite(element, text, speed = 90) {
     writing()
 }
 
-const name_of_element= document.getElementById('type')
+function checkForms() {
+    const name = document.getElementById('name').value
+    const cpf = document.getElementById('cpf').value
+    const email = document.getElementById('email').value
+    const password = document.getElementById('password').value
+    const gender = document.getElementById('gender').value
+    const feedback = document.getElementById('r9')
+
+
+}
+
+const name_of_element = document.getElementById('type')
 animateWrite(name_of_element, 'Kauan Vinícius', 120)
 
 const navResponsive = document.querySelector('.menu_responsive')

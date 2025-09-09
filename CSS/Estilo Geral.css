@@ -93,7 +93,7 @@ html {
     width: 100%;
     background: var(--text);
     border-radius: 2px;
-    transition: 0.3s;
+    transition: 0.5s;
 
 }
 
@@ -166,7 +166,7 @@ html {
         width: 100%;
         display: block;
         padding: 9px 20px;
-      
+    
     }
 }
 
@@ -199,17 +199,18 @@ html {
     font-size: 1rem;
     padding: 9px 10px;
     cursor: pointer;
-    transition: 0.2s;
+    transition: 0.5s;
 
 }
 
-.navegation a:hover { 
-    transform: scale(1.06);
-
+.navegation a:hover {
+    transform: scale(1.1);
+    text-decoration: underline;
 }
+
 .header img {
-    width: 135px;
-    height: 135px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 15px;
@@ -287,9 +288,9 @@ html {
     padding: 26px;
     background-color: var(--secondary);
     border-radius: 13px;
-    box-shadow: 0 4px 13px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 4px 13px rgba(0, 0, 0, 0.12);
     text-align: center;
-    transition: 0.5s;
+    transition: 0.3s;
 
 }
 
