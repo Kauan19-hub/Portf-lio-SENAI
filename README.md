@@ -22,7 +22,7 @@ During the development of the portfolio, we applied the main concepts of web dev
 
 ###
 
-**<h2>📂 File organization :</h2>**
+**<h2>📂 File Organization :</h2>**
 
 ###
 
