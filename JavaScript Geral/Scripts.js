@@ -386,7 +386,11 @@ function checkForms() {
 
     }
 
-    if (selectGender.trim().toLocaleLowerCase() !== "masculino" && selectGender.trim().toLocaleLowerCase() !== "feminino") {
+    if (selectGender.trim().toLocaleLowerCase() !== "masculino" &&
+        selectGender.trim().toLocaleLowerCase() !== "m" &&
+        selectGender.trim().toLocaleLowerCase() !== "feminino" &&
+        selectGender.trim().toLocaleLowerCase() !== "f") {
+        
         updateResult(feedback, "Gênero não identificado", "error")
         return
 
