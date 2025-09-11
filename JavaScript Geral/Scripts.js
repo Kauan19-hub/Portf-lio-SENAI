@@ -320,7 +320,7 @@ function checkForms() {
     let feedback = document.getElementById('r9')
 
     if (inputName === "") {
-        updateResult(feedback, "Por favor, digite seu nome", "error")
+        updateResult(feedback, "Digite seu nome", "error")
         return
 
     }
@@ -343,7 +343,7 @@ function checkForms() {
     }
         
     if (inputCPF === "") {
-        updateResult(feedback, "Erro. Digite seu CPF", "error")
+        updateResult(feedback, "Digite seu CPF", "error")
         return
 
     }
@@ -357,7 +357,7 @@ function checkForms() {
     const emaill = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
     if (inputEmail === "") {
-        updateResult(feedback, "Erro. Digite seu email", "error")
+        updateResult(feedback, "Digite seu email", "error")
         return
 
     }
@@ -369,7 +369,7 @@ function checkForms() {
     }
 
     if (inputPassword === "") {
-        updateResult(feedback, "Inválido. Por favor, digite uma senha", "error")
+        updateResult(feedback, "Digite uma senha", "error")
         return
 
     }
@@ -381,7 +381,13 @@ function checkForms() {
     }
 
     if (selectGender === "") {
-        updateResult(feedback, "Por favor, selecione seu gênero", "error")
+        updateResult(feedback, "Selecione seu gênero", "error")
+        return
+
+    }
+
+    if (selectGender.trim().toLocaleLowerCase() !== "masculino" && selectGender.trim().toLocaleLowerCase() !== "feminino") {
+        updateResult(feedback, "Gênero não identificado", "error")
         return
 
     }
