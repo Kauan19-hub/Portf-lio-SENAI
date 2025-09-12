@@ -1,5 +1,3 @@
-> Repository under development until September 30th... 
-
 **<h2>📘 PWFE Portfolio Documentation (Front-End Web Programming)</h2>**
 
 ###
