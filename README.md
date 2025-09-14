@@ -37,7 +37,7 @@ During the development of the portfolio, we applied the main concepts of web dev
  
 ---
 
-✅- `Extensions`, `CTRL` + `SHIFT` + `X`, Install
+✅- `Extensions`, `CTRL` + `SHIFT` + `X`, Install **Live Server**
 
 ###
 
@@ -137,9 +137,6 @@ Pull Requests are welcome! For changes or suggestions, please open an issue to d
 </div>
 
 ###
-
-<h6>Duration: 3 months</h6>
-
 
 
 
