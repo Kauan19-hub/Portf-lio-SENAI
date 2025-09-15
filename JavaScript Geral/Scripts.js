@@ -1,9 +1,11 @@
+//Definições de Arrow Function
 let script = 0;
 const cards = document.querySelectorAll('.card')
 const carousel = document.getElementById('carousel')
 
 let attemps = 5
 
+//Função para enviar resposts com a tecla 'ENTER'
 function enter(input, checkFunction) {
     const input_box = document.getElementById(input)
     input_box.addEventListener('keydown', function(event) {
@@ -14,6 +16,7 @@ function enter(input, checkFunction) {
     })
 };
 
+//Função 'enter' sendo aplicada em todos os exercícios
 enter('idade', checkIdade)
 enter('numero', checkParImpar)
 enter('num1', checkMaior)
@@ -29,11 +32,13 @@ enter('email', checkForms)
 enter('password', checkForms)
 enter('gender', checkForms)
 
+//Animação das respostas 
 function showCards(Index) {
     carousel.style.transform = `translateX(-${Index * 100}%)`
 
 }
 
+//Definição das cores de cada resposta: 'SUCESSO', 'ERRO', 'ALERTA', 'INFO'
 function updateResult(feedback, text, type) {
     feedback.textContent = text
     feedback.classList.remove('success', 'warning', 'error', 'info')
@@ -45,12 +50,13 @@ function updateResult(feedback, text, type) {
 
 showCards(script)
 
+//Função idade
 function checkIdade() {
     const idade = document.getElementById('idade').value.trim()
     const feedback = document.getElementById('r1')
 
     if (idade === "") {
-        updateResult(feedback, "Inválido. Por favor, digite sua idade", "error")
+        updateResult(feedback, "Inválido. Digite sua idade", "error")
         return
 
     }
@@ -66,17 +72,18 @@ function checkIdade() {
         updateResult(feedback, "Maior de idade", "success")
 
     } else {
-        updateResult(feedback, "Idade inválida. Tente novamente", "error")
+        updateResult(feedback, "Idade inválida.", "error")
 
     }
 }
 
+//Função números pares e ímpares
 function checkParImpar() {
     const num = document.getElementById('numero').value.trim()
     const feedback = document.getElementById('r2')
 
     if (num === "") {
-        updateResult(feedback, "Por favor, digite um número", "error")
+        updateResult(feedback, "Inválido. Digite um número", "error")
         return
 
     }
@@ -97,13 +104,14 @@ function checkParImpar() {
     }
 }
 
+//Função número maior e menor
 function checkMaior() {
     const numero1 = document.getElementById('num1').value.trim()
     const numero2 = document.getElementById('num2').value.trim()
     const feedback = document.getElementById('r3')
 
     if (numero1 === "" && numero2 === "") {
-        updateResult(feedback, "Preencha os dois campos.", "error")
+        updateResult(feedback, "Inválido. Preencha os dois campos.", "error")
         return
 
     }
@@ -111,7 +119,7 @@ function checkMaior() {
     const n1 = Number(numero1)
     const n2 = Number(numero2)
     if (isNaN(n1) || isNaN(n2)) {
-        updateResult(feedback, "Erro, números inválidos", "error")
+        updateResult(feedback, "Números inválidos", "error")
         return
 
     }
@@ -128,6 +136,7 @@ function checkMaior() {
     }
 }
 
+//Função senha com uma senha correta definida e limite de tentativas
 function checkSenha() {
     const senha = 202525
     const input = document.getElementById('senha').value.trim()
@@ -135,7 +144,7 @@ function checkSenha() {
     const feedback = document.getElementById('r4')
 
     if (input === "") {
-        updateResult(feedback, "Inválido. Digite uma senha, por favor", "error")
+        updateResult(feedback, "Inválido. Digite uma senha", "error")
         return
 
     }
@@ -150,18 +159,19 @@ function checkSenha() {
             updateResult(feedback, `Acesso negado. Você possui ${attemps} tentativa(s)!`, "warning")
         
         } else {
-            updateResult(feedback, "Acesso bloqueado!", "error")
+            updateResult(feedback, "Seu acesso está bloqueado!", "error")
 
         }  
     }
 }
 
+//Função temperatura, a resposta muda conforme a temperatura registrada
 function checkTemper() {
     const temperatura = document.getElementById('temperatura').value.trim()
     const feedback = document.getElementById('r5')
 
     if (temperatura === "") {
-        updateResult(feedback, "Por favor, digite a temperatura atual", "error")
+        updateResult(feedback, "Inválido. Digite a temperatura atual", "error")
         return
 
     }
@@ -185,6 +195,7 @@ function checkTemper() {
        
 }
 
+//Função tabuada, onde imprime tabuada de números de 1 a 9
 function checkTabu() {
     const input = document.getElementById('tabuada').value
     const number = parseFloat(input)
@@ -197,13 +208,13 @@ function checkTabu() {
     }
 
     if (isNaN(number)) {
-        updateResult(feedback, "Erro. Digite um número", "error")
+        updateResult(feedback, "Digite um número", "error")
         return
 
     }
 
     if (number < 1 || number > 9) {
-        updateResult(feedback, "Inválido. Por favor, digite um número de 1 a 9", "error")
+        updateResult(feedback, "Inválido. Digite um número de 1 a 9", "error")
         return
 
     }
@@ -222,6 +233,8 @@ function checkTabu() {
 
 }
 
+/* Função pedra, papel e tesoura, o jogo pode dar empate, o jogador pode ganhar ou perder,  e a máquina pode
+ganhar ou perder */
 function checkJokenpo() {
     const userChoices = document.getElementById('jokenpo').value.trim().toLowerCase()
     const feedback = document.getElementById('r7')
@@ -230,7 +243,7 @@ function checkJokenpo() {
     const userChoice = choices.indexOf(userChoices)
 
     if (userChoice === -1) {
-        updateResult(feedback, "Inválido. Escolha entre Pedra, Papel ou Tesoura", "error")
+        updateResult(feedback, "Inválido. Escolha entre pedra, papel ou tesoura", "error")
         return
 
     }
@@ -240,24 +253,27 @@ function checkJokenpo() {
     const choices2 = computerChoice
 
     if (choices1 === choices2) {
-        updateResult(feedback, "Empatado!", "info")
+        updateResult(feedback, "Jogo empatado", "info")
         return
 
     } else if (
-        (choices1 === 0 && choices2 === 2) || (choices1 === 1 && choices2 === 0) || (choices1 === 2 && choices2 === 1)
+        (choices1 === 0 && choices2 === 2) || 
+        (choices1 === 1 && choices2 === 0) ||
+         (choices1 === 2 && choices2 === 1)
 
     ) {
     
-        updateResult(feedback, "Jogador venceu!", "success")
+        updateResult(feedback, "Jogador venceu", "success")
         return
 
     } else {
-        updateResult(feedback, "A máquina venceu!", "error")
+        updateResult(feedback, "A máquina venceu", "error")
         return
 
     }   
 }
 
+//Função fatorial, onde qualquer número INTEIRO tem o seu fatorial exibido
 function checkFatorial() {
     const input = document.getElementById('factor').value
     const number = parseFloat(input)
@@ -270,13 +286,13 @@ function checkFatorial() {
     }
 
     if (!Number.isInteger(number)) {
-        updateResult(feedback, "Erro, o número precisa ser inteiro", "error")
+        updateResult(feedback, "Inválido. 0 número precisa ser inteiro", "error")
         return
 
     }
 
     if (number < 0) {
-        updateResult(feedback, "Número inválido. Ele não pode ser negativo", "error")
+        updateResult(feedback, "Inválido. Número não pode ser negativo", "error")
         return
 
     }
@@ -311,6 +327,7 @@ function animateWrite(element, text, speed = 90) {
     writing()
 }
 
+//Função formulário, cada inbox tem suas regras, e fórmulas reais para validação 
 function checkForms() {
     let inputName = document.getElementById('name').value.trim()
     let inputCPF = document.getElementById('cpf').value.trim()
@@ -331,6 +348,7 @@ function checkForms() {
 
     }
 
+    //Fórmula para validação real de CPF
     const verifyCPF = c => {
         c = c.replace(/\D/g,"");
         return c.length == 11 &&
@@ -354,6 +372,7 @@ function checkForms() {
 
     }
 
+    //Fórmula real de validação de E-mail
     const emaill = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
     if (inputEmail === "") {
@@ -380,26 +399,25 @@ function checkForms() {
 
     }
 
-    if (selectGender === "") {
+    /* Função do gênero. O inbox do gênero, é inclusivo. Como pussui vários, não temos um gênero errado,
+    a não ser que seja um número */
+    if (selectGender.trim() === "") {
         updateResult(feedback, "Selecione seu gênero", "error")
         return
 
     }
-
-    if (selectGender.trim().toLocaleLowerCase() !== "masculino" &&
-        selectGender.trim().toLocaleLowerCase() !== "m" &&
-        selectGender.trim().toLocaleLowerCase() !== "feminino" &&
-        selectGender.trim().toLocaleLowerCase() !== "f") {
         
-        updateResult(feedback, "Gênero não identificado", "error")
+    if   (/\d/.test(selectGender)) {
+        updateResult(feedback, "Inválido. Números não são reconhecidos", "error")
         return
-
+        
     }
 
-    updateResult(feedback, "Cadastro realizado!", "success")
+    updateResult(feedback, "Seu cadastro foi realizado", "success")
 
 }
 
+//Animação de digitação no nome
 const name_of_element = document.getElementById('type')
 animateWrite(name_of_element, 'Kauan Vinícius', 120)
 

@@ -204,7 +204,6 @@ html {
 }
 
 .navegation a:hover {
-    transform: scale(1.1);
     text-decoration: underline;
 }
 
@@ -384,6 +383,11 @@ html {
 
 }
 
+.gender-Validator span {
+    color: var(--copyright);
+
+}
+
 .sub-boox:hover {
     box-shadow: 0 0 19px var(--accent);
 }
@@ -437,7 +441,6 @@ footer.networks-icons {
 }
 
 .instagram i:hover {
-    transform: scale(1.1);
     background-color: var(--instagram);
     cursor: pointer;
 
@@ -460,7 +463,6 @@ footer.networks-icons {
 }
 
 .github i:hover {
-    transform: scale(1.1);
     background-color: var(--github);
     cursor: pointer;
 
@@ -482,7 +484,6 @@ footer.networks-icons {
 }
 
 .linkedin i:hover {
-    transform: scale(1.1);
     background-color: var(--linkedin);
     cursor: pointer;
   
