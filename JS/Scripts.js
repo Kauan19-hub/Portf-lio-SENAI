@@ -427,6 +427,7 @@ function checkName() {
 const name_of_element = document.getElementById('type')
 animateWrite(name_of_element, 'Kauan Vinícius', 120)
 
+//Permite que a navbar em tela mobile seja clicável
 const navResponsive = document.querySelector('.menu_responsive')
 const nav = document.querySelector('.navegation')
 
