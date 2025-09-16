@@ -5,7 +5,7 @@ const carousel = document.getElementById('carousel')
 
 let attemps = 5
 
-//Função para enviar resposts com a tecla 'ENTER'
+//Função para enviar respostas com a tecla 'ENTER'
 function enter(input, checkFunction) {
     const input_box = document.getElementById(input)
     input_box.addEventListener('keydown', function(event) {
