@@ -31,6 +31,7 @@ enter('cpf', checkForms)
 enter('email', checkForms)
 enter('password', checkForms)
 enter('gender', checkForms)
+enter('result', checkName)
 
 //Animação das respostas 
 function showCards(Index) {
@@ -72,7 +73,7 @@ function checkIdade() {
         updateResult(feedback, "Maior de idade", "success")
 
     } else {
-        updateResult(feedback, "Idade inválida.", "error")
+        updateResult(feedback, "Idade inválida", "error")
 
     }
 }
@@ -111,7 +112,7 @@ function checkMaior() {
     const feedback = document.getElementById('r3')
 
     if (numero1 === "" && numero2 === "") {
-        updateResult(feedback, "Inválido. Preencha os dois campos.", "error")
+        updateResult(feedback, "Inválido. Preencha os dois campos", "error")
         return
 
     }
@@ -356,7 +357,7 @@ function checkForms() {
             [9, 10].every(j => 
                 (c.slice(0, j).split("").reduce((s, n, i) => s + n * (j + 1 - i), 0) * 10 % 11 % 10) == c[j]
 
-        );
+        ); 
 
     }
         
@@ -415,6 +416,11 @@ function checkForms() {
 
     updateResult(feedback, "Seu cadastro foi realizado", "success")
 
+}
+
+function checkName() {
+    const name = document.getElementById('name').value
+    const feedback = document.getElementById('r10')
 }
 
 //Animação de digitação no nome

@@ -52,9 +52,9 @@ html {
 }
 
 .float-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 49%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
     border: 3px solid var(--accent);
     object-fit: cover;
     box-shadow: 0 0 15px;
