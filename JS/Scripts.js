@@ -32,6 +32,16 @@ enter('email', checkForms)
 enter('password', checkForms)
 enter('gender', checkForms)
 enter('name2', checkNameS)
+enter('materiaFav', checkMateriaFav)
+enter('date', checkDate)
+enter('number1', checkCalc)
+enter('number2', checkCalc)
+enter('oper', checkCalc)
+enter('nt1', checkMedia)
+enter('nt2', checkMedia)
+enter('nt3', checkMedia)
+enter('width', checkPaint)
+enter('height', checkPaint)
 
 //Animação das respostas 
 function showCards(Index) {
@@ -419,6 +429,7 @@ function checkForms() {
 
 }
 
+//Função de saudações. Usuário digita seu nome, e automaticamente, a máquina o retorna com uma menagem
 function checkNameS() {
    const name = document.getElementById('name2').value.trim()
    const  feedback = document.getElementById('r10')
@@ -429,7 +440,7 @@ function checkNameS() {
 
     }
 
-    //Mesma coisa do exercício anterior, ele não aceita números
+    //Mesma coisa do exercício anterior, ele não aceita números, e aceita maiúsculo e minúsculo
     if  (/\d/.test(name)) {
         updateResult(feedback, "Inválido. Números não são reconhecidos", "error")
         return
@@ -440,9 +451,166 @@ function checkNameS() {
 
 }
 
+/* Função de matéria favorita, onde o usuário digita a matéria que mais gosta e a máquina o retorna
+com uma mensagem */
+function checkMateriaFav() {
+    const inputMateria = document.getElementById('materiaFav').value.trim()
+    const feedback = document.getElementById('r11')
+
+     if (inputMateria.trim() === "") {
+        updateResult(feedback, "Inválido. Digite a sua matéria favorita", "error")
+        return
+
+    }
+
+    //Fórmula de validação de número
+    if  (/\d/.test(inputMateria)) {
+        updateResult(feedback, "Inválido. Números não são reconhecidos", "error")
+        return
+
+    }
+
+    updateResult(feedback, `A matéria de ${inputMateria} é uma boa escolha`, "success")
+
+}
+
+/* Função de data atual, onde o usuário digita a data atual, e máquina o retorna novamente
+com uma mensagem */
+function checkDate() {
+    const inputDate = document.getElementById('date').value.trim()
+    const feedback = document.getElementById('r12')
+
+     if (inputDate.trim() === "") {
+        updateResult(feedback, "Inválido. Digite a data de hoje", "error")
+        return
+
+    }
+
+    updateResult(feedback, `Seja bem-vindo em ${inputDate}`, "success")
+
+}
+
+/* Função de uma mini calculadora, o usuário escolhe os  números e uma das 4 operações
+desejadas */
+function checkCalc() {
+    const inputCalc1 = parseFloat(document.getElementById('number1').value.trim())
+    const inputCalc2 = parseFloat(document.getElementById('number2').value.trim())
+    const operation = document.getElementById('oper').value.trim()
+    const feedback = document.getElementById('r13')
+    
+    const addition = inputCalc1 + inputCalc2
+    const subtraction = inputCalc1 - inputCalc2
+    const multiplication = inputCalc1 * inputCalc2
+    const division = inputCalc1 / inputCalc2
+
+     if (isNaN(inputCalc1)) {
+        updateResult(feedback, "Inválido. Digite o número", "error")
+        return
+
+     }
+
+     if (isNaN(inputCalc2)) {
+        updateResult(feedback, "Inválido. Digite o número", "error")
+        return
+        
+     }
+
+     if (operation === "+") {
+        updateResult(feedback, `${inputCalc1} + ${inputCalc2} é igual a ${addition}`, "info")
+        return
+
+     } else if (operation === "-") {
+         updateResult(feedback, `${inputCalc1} - ${inputCalc2} é igual a ${subtraction}`, "info")
+         return
+
+     } else if (operation === "*") {
+        updateResult(feedback, `${inputCalc1} * ${inputCalc2} é igual a ${multiplication}`, "info")
+        return
+
+     } else if (operation === "/") {
+        updateResult(feedback, `${inputCalc1} / ${inputCalc2} é igual a ${division}`, "info")
+        return
+
+     } else {
+         updateResult(feedback, "Inválido. Operação não reconhecida", "error")
+        return
+
+     }
+        
+}
+
+//Função média de notas, onde é calculada a média de 3 notas escolhidas pelo usuário
+function checkMedia() {
+    const note1 = parseFloat(document.getElementById('nt1').value.trim())
+    const note2 = parseFloat(document.getElementById('nt2').value.trim())
+    const note3 = parseFloat(document.getElementById('nt3').value.trim())
+    const feedback = document.getElementById('r14')
+
+    let media = (note1 + note2 + note3) / 2
+
+    if (isNaN(note1)) {
+         updateResult(feedback, "Inválido. Digite uma nota", "error")
+        return
+
+    }
+
+    if (isNaN(note2)) {
+         updateResult(feedback, "Inválido. Digite uma nota", "error")
+        return
+
+    }
+
+    if (isNaN(note3)) {
+         updateResult(feedback, "Inválido. Digite uma nota", "error")
+        return
+
+    }
+
+    updateResult(feedback, `Média da soma: ${media.toFixed(1)}`, "success")
+
+}
+
+/* Função de checar altura e largura da parede, para assim, calcular quantos litros são
+necessários para a pintua */
+function checkPaint() {
+    const inputWidth = parseFloat(document.getElementById('width').value.trim())
+    const inputHeight = parseFloat(document.getElementById('height').value.trim())
+    const feedback = document.getElementById('r15')
+
+    const area = inputWidth * inputHeight
+    const paint = (area / 2).toFixed(2)
+
+    if (isNaN(inputWidth)) {
+        updateResult(feedback, "Inválido. Digite a largura", "error")
+        return
+
+    }
+
+    if (inputWidth <= 0) {
+        updateResult(feedback, "A largura precisa ser maior que 0", "warning")
+        return
+
+    }
+
+     if (inputHeight <= 0) {
+        updateResult(feedback, "A altura precisa ser maior que 0", "warning")
+        return
+        
+    }
+    
+     if (isNaN(inputHeight)) {
+        updateResult(feedback, "Inválido. Digite a altura", "error")
+        return
+
+    }
+
+    updateResult(feedback, `Vão ser necessários, ${paint} litros de tinta para pintar a parede`, "success")
+
+}
+
 //Animação de digitação no nome
 const name_of_element = document.getElementById('type')
-animateWrite(name_of_element, 'Kauan Vinícius', 120)
+animateWrite(name_of_element, 'Eu Sou Kauan Vinícius', 120)
 
 //Permite que a navbar em tela mobile seja clicável
 const navResponsive = document.querySelector('.menu_responsive')

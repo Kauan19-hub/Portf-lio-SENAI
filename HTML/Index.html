@@ -1,287 +1,288 @@
 <!DOCTYPE html>
 <html lang="PT-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meu Portifólio | PWFE</title>
-    <link rel="stylesheet" href="/CSS/Style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
-  </head>
 
-  <body>
-    <nav class="navegation">
-      <div class="menu_responsive">
-        <span></span>
-        <span></span>
-        <span></span>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meu Portifólio | PWFE</title>
+  <link rel="stylesheet" href="/CSS/Style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+
+<body>
+  <nav class="navegation">
+    <div class="menu_responsive">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul>
+      <li class="navbox">
+        <a href="#start">Início</a>
+      </li>
+
+      <li class="navbox">
+        <a href="#about">Sobre</a>
+      </li>
+
+      <li class="navbox">
+        <a href="#exercises">Tarefas</a>
+      </li>
+
+      <li class="navbox">
+        <a href="#networks">Redes</a>
+      </li>
+    </ul>
+  </nav>
+
+  <header id="start" class="header">
+    <div class="profile">
+      <img src="/Img/MyImg.jpg" class="float-img" alt="minha foto" />
+      <div class="text-info">
+        <h2 id="type"></h2>
+        <p>Full-Stack Developer | DS - Robert Bosch</p>
       </div>
+    </div>
+  </header>
 
-      <ul>
-        <li class="navbox">
-          <a href="#start">Início</a>
-        </li>
+  <section id="about" class="about">
+    <h2 class="subtitulo">SOBRE O <span>PORTIFÓLIO</span></h2>
+    <div class="subbox">
+      <p class="subpar">
+        Olá! Seja bem-vindo(a). Este portifólio foi desenvolvido para
+        apresentar atividades de forma mais interativa e, com foco em
+        aprimorar meus conhecimentos em Front-End e aprender mais sobre
+        projetos e desenvolvimento de sites.
+      </p>
+    </div>
+  </section>
 
-        <li class="navbox">
-          <a href="#about">Sobre</a>
-        </li>
-
-        <li class="navbox">
-          <a href="#exercises">Tarefas</a>
-        </li>
-
-        <li class="navbox">
-          <a href="#networks">Redes</a>
-        </li>
-      </ul>
-    </nav>
-
-    <header id="start" class="header">
-      <div class="profile">
-        <img src="/Img/MyImg.jpg" class="float-img" alt="minha foto" />
-        <div class="text-info">
-          <h2 id="type"></h2>
-          <p>Full-Stack Developer | DS - Robert Bosch</p>
+  <section id="exercises">
+    <div id="carousel" class="carousel">
+      <div class="card">
+        <h2>1° Exercício</h2>
+        <p class="question">Digite a sua idade</p>
+        <div class="answer-box">
+          <input type="number" id="idade" placeholder="Digite sua resposta" />
+          <button onclick="checkIdade()">Verificar</button>
         </div>
+        <p class="result" id="r1"></p>
       </div>
-    </header>
 
-    <section id="about" class="about">
-      <h2 class="subtitulo">SOBRE O <span>PORTIFÓLIO</span></h2>
-      <div class="subbox">
-        <p class="subpar">
-          Olá! Seja bem-vindo(a). Este portifólio foi desenvolvido para
-          apresentar atividades de forma mais interativa e, com foco em
-          aprimorar meus conhecimentos em Front-End e aprender mais sobre
-          projetos e desenvolvimento de sites.
+      <div class="card">
+        <h2>2° Exercício</h2>
+        <p class="question">Digite um número inteiro</p>
+        <div class="answer-box">
+          <input type="number" id="numero" placeholder="Digite sua resposta" />
+          <button onclick="checkParImpar()">Verificar</button>
+        </div>
+        <p class="result" id="r2"></p>
+      </div>
+
+      <div class="card">
+        <h2>3° Exercício</h2>
+        <p class="question">Escolha 2 números</p>
+        <div class="answer-box">
+          <input type="number" id="num1" placeholder="Digite a primeira resposta" />
+          <input type="number" id="num2" placeholder="Digite a segunda resposta" />
+          <button onclick="checkMaior()">Verificar</button>
+        </div>
+        <p class="result" id="r3"></p>
+      </div>
+
+      <div class="card">
+        <h2>4° Exercício</h2>
+        <p class="question">Digite uma senha<br>
+          OBS: A senha é 202525
         </p>
-      </div>
-    </section>
-
-    <section id="exercises">
-      <div id="carousel" class="carousel">
-        <div class="card">
-          <h2>1° Exercício</h2>
-          <p class="question">Digite a sua idade</p>
-          <div class="answer-box">
-            <input
-              type="number"
-              id="idade"
-              placeholder="Digite sua resposta"/>
-            <button onclick="checkIdade()">Verificar</button>
-          </div>
-          <p class="result" id="r1"></p>
+        <div class="answer-box">
+          <input type="text" id="senha" placeholder="Digite sua resposta" />
+          <button onclick="checkSenha()">Verificar</button>
         </div>
-
-        <div class="card">
-          <h2>2° Exercício</h2>
-          <p class="question">Digite um número inteiro</p>
-          <div class="answer-box">
-            <input
-              type="number"
-              id="numero"
-              placeholder="Digite sua resposta"/>
-            <button onclick="checkParImpar()">Verificar</button>
-          </div>
-          <p class="result" id="r2"></p>
-        </div>
-
-        <div class="card">
-          <h2>3° Exercício</h2>
-          <p class="question">Escolha 2 números</p>
-          <div class="answer-box">
-            <input
-              type="number"
-              id="num1"
-              placeholder="Digite a primeira resposta"/>
-            <input
-              type="number"
-              id="num2"
-              placeholder="Digite a segunda resposta"/>
-            <button onclick="checkMaior()">Verificar</button>
-          </div>
-          <p class="result" id="r3"></p>
-        </div>
-
-        <div class="card">
-          <h2>4° Exercício</h2>
-          <p class="question">Digite uma senha<br>
-            OBS: A senha é 202525
-          </p>
-          <div class="answer-box">
-            <input
-              type="text"
-              id="senha"
-              placeholder="Digite sua resposta"/>
-            <button onclick="checkSenha()">Verificar</button>
-          </div>
-          <p class="result" id="r4"></p>
-        </div>
-
-        <div class="card">
-          <h2>5° Exercício</h2>
-          <p class="question">
-            Digite a temperatura atual em graus Celsius (°C)
-          </p>
-          <div class="answer-box">
-            <input
-              type="number"
-              id="temperatura"
-              placeholder="Digite sua resposta"/>
-            <button onclick="checkTemper()">Verificar</button>
-          </div>
-          <p class="result" id="r5"></p>
-        </div>
-
-        <div class="card">
-          <h2>6° Exercício</h2>
-          <p class="question">Digite um número dentro do<br>
-            intervalo de 1 a 9 para exibir a tabuada</p>
-          <div class="answer-box">
-            <input
-              type="number"
-              id="tabuada"
-              placeholder="Digite sua resposta"/>
-            <button onclick="checkTabu()">Verificar</button>
-          </div>
-          <p class="result" id="r6"></p>
-        </div>
-
-        <div class="card">
-          <h2>7° Exercício</h2>
-          <p class="question">Escolha entre pedra, papel e tesoura</p>
-          <div class="answer-box">
-            <input
-              type="text"
-              id="jokenpo"
-              placeholder="Digite sua resposta"/>
-            <button onclick="checkJokenpo()">Jogar</button>
-          </div>
-          <p class="result" id="r7"></p>
-        </div>
-
-        <div class="card">
-          <h2>8° Exercício</h2>
-          <p class="question">Escolha um número inteiro aleatório</p>
-          <div class="answer-box">
-            <input
-              type="number"
-              id="factor"
-              placeholder="Digite sua resposta"/>
-            <button onclick="checkFactorial()">Verificar</button>
-          </div>
-          <p class="result" id="r8"></p>
-        </div>
-
-         <div class="card">
-          <h2>9° Exercício</h2>
-          <p class="question">Validação de Formulário | Por favor, preencha os campos abaixo</p>
-          <div class="answer-box">
-
-            <input
-              type="text"
-              id="name"
-              placeholder="Seu nome"/>
-
-            <input 
-              type="text"
-              id="cpf"
-              placeholder="000.000.00-00"/>
-
-            <input
-              type="email"
-              id="email"
-              placeholder="seuemail@gmail.com"/>
-
-            <input
-              type="password"
-              id="password"
-              placeholder="senha123"/>
-
-            <input
-              type="text"
-              id="gender"
-              placeholder="Como se identifica?"/>
-
-              <div class="gender-Validator">
-                <span>Qualquer gênero é válido.<br>
-                              Menos números
-                </span>
-              </div>
-              
-            <button onclick="checkForms()">Login</button>
-          </div>
-          <p class="result" id="r9"></p>
-        </div>
-
-         <div class="card">
-          <h2>10° Exercício</h2>
-          <p class="question">Digite o seu nome aqui</p>
-          <div class="answer-box">
-            <input
-              type="text"
-              id="name2"
-              placeholder="Digite sua resposta"/>
-            <button onclick="checkName()">Verificar</button>
-          </div>
-          <p class="result" id="r10"></p>
-        </div>
-
-        <div class="card">
-          <h2>11° Exercício</h2>
-          <p class="question">Digite a sua matéria favorita aqui</p>
-          <div class="answer-box">
-            <input
-              type="text"
-              id="materiaFav"
-              placeholder="Digite sua resposta"/>
-            <button onclick="checkMateriaFav()">Verificar</button>
-          </div>
-          <p class="result" id="r11"></p>
-        </div>
-      </div>
-    </section>
-
-    <section id="networks">
-      <div class="sub-boox">
-        <div class="about-me">
-          <p><i class="fas fa-calendar"></i> 22.05</p>
-          <p><i class="fas fa-map-marker-alt"></i> Campinas/SP - Brasil</p>
-          <p><i class="fas fa-globe"></i> Português | Inglês</p>
-          <p><i class="fas fa-envelope"></i> saleskauan308@gmail.com</p>
-        </div>
-      </div>
-    </section>
-
-    <footer class="networks-icons">
-      <div class="rights">
-        © Copyright meu, todos os direitos reservados 2025
+        <p class="result" id="r4"></p>
       </div>
 
-      <div class="container">
-        <div class="instagram">
-          <a
-            href="https://www.instagram.com/kauanl01/?igsh=MTA1czhyN3liM3l0NQ%3D%3D#"
-            alt="instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
+      <div class="card">
+        <h2>5° Exercício</h2>
+        <p class="question">
+          Digite a temperatura atual em graus Celsius (°C)
+        </p>
+        <div class="answer-box">
+          <input type="number" id="temperatura" placeholder="Digite sua resposta" />
+          <button onclick="checkTemper()">Verificar</button>
         </div>
-
-        <div class="github">
-          <a href="https://github.com/Kauan19-hub" alt="github">
-            <i class="fab fa-github"></i>
-          </a>
-        </div>
-
-        <div class="linkedin">
-          <a
-            href="https://www.linkedin.com/in/kauan-vin%C3%ADcius?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-            alt="linkedin">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-        </div>
+        <p class="result" id="r5"></p>
       </div>
-    </footer>
 
-    <script src="/JS/Scripts.js"></script>
-  </body>
+      <div class="card">
+        <h2>6° Exercício</h2>
+        <p class="question">Digite um número dentro do<br>
+          intervalo de 1 a 9 para exibir a tabuada</p>
+        <div class="answer-box">
+          <input type="number" id="tabuada" placeholder="Digite sua resposta" />
+          <button onclick="checkTabu()">Verificar</button>
+        </div>
+        <p class="result" id="r6"></p>
+      </div>
+
+      <div class="card">
+        <h2>7° Exercício</h2>
+        <p class="question">Escolha entre pedra, papel e tesoura</p>
+        <div class="answer-box">
+          <input type="text" id="jokenpo" placeholder="Digite sua resposta" />
+          <button onclick="checkJokenpo()">Jogar</button>
+        </div>
+        <p class="result" id="r7"></p>
+      </div>
+
+      <div class="card">
+        <h2>8° Exercício</h2>
+        <p class="question">Escolha um número inteiro aleatório</p>
+        <div class="answer-box">
+          <input type="number" id="factor" placeholder="Digite sua resposta" />
+          <button onclick="checkFactorial()">Verificar</button>
+        </div>
+        <p class="result" id="r8"></p>
+      </div>
+
+      <div class="card">
+        <h2>9° Exercício</h2>
+        <p class="question">Validação de Formulário | Por favor, preencha os campos abaixo</p>
+        <div class="answer-box">
+
+          <input type="text" id="name" placeholder="Seu nome" />
+
+          <input type="text" id="cpf" placeholder="000.000.00-00" />
+
+          <input type="email" id="email" placeholder="seuemail@gmail.com" />
+
+          <input type="password" id="password" placeholder="senha123" />
+
+          <input type="text" id="gender" placeholder="Como se identifica?" />
+
+          <div class="gender-Validator">
+            <span>Qualquer gênero é válido.<br>
+              Menos números
+            </span>
+          </div>
+
+          <button onclick="checkForms()">Login</button>
+        </div>
+        <p class="result" id="r9"></p>
+      </div>
+
+      <div class="card">
+        <h2>10° Exercício</h2>
+        <p class="question">Digite o seu nome aqui</p>
+        <div class="answer-box">
+          <input type="text" id="name2" placeholder="Digite sua resposta" />
+          <button onclick="checkName()">Verificar</button>
+        </div>
+        <p class="result" id="r10"></p>
+      </div>
+
+      <div class="card">
+        <h2>11° Exercício</h2>
+        <p class="question">Digite a sua matéria favorita aqui</p>
+        <div class="answer-box">
+          <input type="text" id="materiaFav" placeholder="Digite sua resposta" />
+          <button onclick="checkMateriaFav()">Verificar</button>
+        </div>
+        <p class="result" id="r11"></p>
+      </div>
+
+      <div class="card">
+        <h2>12° Exercício</h2>
+        <p class="question">Em qual data você está acessando esse portifólio?</p>
+        <div class="answer-box">
+          <input type="date" id="date" placeholder="Digite sua resposta" />
+          <button onclick="checkDate()">Verificar</button>
+        </div>
+        <p class="result" id="r12"></p>
+      </div>
+
+      <div class="card">
+        <h2>13° Exercício</h2>
+        <p class="question">Cálculo de números | Informe 2 números</p>
+        <div class="answer-box">
+          <input type="number" id="number1" placeholder="Digitea primeira resposta" />
+
+          <input type="number" id="number2" placeholder="Digite a segunda resposta" />
+
+          <input type="text" id="oper" placeholder="Selecione a operação" />
+          <button onclick="checkCalc()">Verificar</button>
+        </div>
+        <p class="result" id="r13"></p>
+      </div>
+
+      <div class="card">
+        <h2>14° Exercício</h2>
+        <p class="question">Digite 3 notas para somarmos a média deles</p>
+        <div class="answer-box">
+          <input type="number" id="nt1" placeholder="Digitea primeira resposta" />
+
+          <input type="number" id="nt2" placeholder="Digite a segunda resposta" />
+
+          <input type="number" id="nt3" placeholder="Digite a terceira resposta" />
+          <button onclick="checkMedia()">Verificar</button>
+        </div>
+        <p class="result" id="r14"></p>
+      </div>
+
+      <div class="card">
+        <h2>15° Exercício</h2>
+        <p class="question">Litros de tinta | Informe a largura e a altura da parede</p>
+        <div class="answer-box">
+          <input type="number" id="width" placeholder="Digite a largura" />
+
+          <input type="number" id="height" placeholder="Digite a altura" />
+          <button onclick="checkPaint()">Verificar</button>
+        </div>
+        <p class="result" id="r15"></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="networks">
+    <div class="sub-boox">
+      <div class="about-me">
+        <p><i class="fas fa-calendar"></i> 22.05</p>
+        <p><i class="fas fa-map-marker-alt"></i> Campinas/SP - Brasil</p>
+        <p><i class="fas fa-globe"></i> Português | Inglês</p>
+        <p><i class="fas fa-envelope"></i> saleskauan308@gmail.com</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="networks-icons">
+    <div class="rights">
+      © Copyright meu, todos os direitos reservados 2025
+    </div>
+
+    <div class="container">
+      <div class="instagram">
+        <a href="https://www.instagram.com/kauanl01/?igsh=MTA1czhyN3liM3l0NQ%3D%3D#" alt="instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+
+      <div class="github">
+        <a href="https://github.com/Kauan19-hub" alt="github">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+
+      <div class="linkedin">
+        <a href="https://www.linkedin.com/in/kauan-vin%C3%ADcius?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+          alt="linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/JS/Scripts.js"></script>
+</body>
+
 </html>

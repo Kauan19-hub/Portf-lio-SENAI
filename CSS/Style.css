@@ -268,10 +268,6 @@ html {
 
 }
 
-.subbox:hover {
-    box-shadow: 0 0 19px var(--accent);
-}
-
 .carousel {
     display: flex;
     flex-wrap: wrap;
@@ -287,15 +283,17 @@ html {
     padding: 26px;
     background-color: var(--secondary);
     border-radius: 13px;
-    box-shadow: 0 4px 13px rgba(0, 0, 0, 0.12);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     text-align: center;
     transition: 0.3s;
 
 }
 
+
+
 .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 4px 13px rgba(204, 204, 204, 0.541);
+    transform: scale(1.02);
+
 }
 
 .answer-box {
@@ -388,10 +386,6 @@ html {
 
 }
 
-.sub-boox:hover {
-    box-shadow: 0 0 19px var(--accent);
-}
-
 .about-me p {
     margin: 0;
     padding: 4px;
@@ -403,8 +397,6 @@ html {
     color: var(--info);
     margin: 6px;
 }
-
-
 
 footer.networks-icons {
     padding: 15px;
@@ -437,7 +429,6 @@ footer.networks-icons {
     border-radius: 50%;
     transition: 0.4s;
     
-
 }
 
 .instagram i:hover {
