@@ -23,13 +23,16 @@ During the development of the portfolio, we applied the main concepts of web dev
 **<h2>📂 File Organization :</h2>**
 
 ###
-
-├── 📄 Portf-lio-PWFE<br>
-├── 📄 VSCode<br>
-├── 📄 Esilo.css<br>
-├── 📄 Index.html<br>
-├── 📄 JavaScript Geral.js<br>
-└── 📄 README.md<br>    
+```powershell
+├── 📂 Portf-lio-PWFE
+│   ├── 📂 CSS
+│   │   └── 🎨 Style.css
+│   ├── 📂 HTML
+│   │   └── 🌐 Index.html
+│   ├── 📂 JS
+│   │   └── ⚡ Scripts.js
+└── 📝 README.md
+```
 
 ###
 
