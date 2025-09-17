@@ -31,7 +31,7 @@ enter('cpf', checkForms)
 enter('email', checkForms)
 enter('password', checkForms)
 enter('gender', checkForms)
-enter('result', checkName)
+enter('name2', checkNameS)
 
 //Animação das respostas 
 function showCards(Index) {
@@ -407,7 +407,8 @@ function checkForms() {
         return
 
     }
-        
+    
+    //Não aceita números, apenas textos (Strings)
     if   (/\d/.test(selectGender)) {
         updateResult(feedback, "Inválido. Números não são reconhecidos", "error")
         return
@@ -418,9 +419,25 @@ function checkForms() {
 
 }
 
-function checkName() {
-    const name = document.getElementById('name').value
-    const feedback = document.getElementById('r10')
+function checkNameS() {
+   const name = document.getElementById('name2').value.trim()
+   const  feedback = document.getElementById('r10')
+
+    if (name.trim() === "") {
+        updateResult(feedback, "Inválido. Digite o seu nome", "error")
+        return
+
+    }
+
+    //Mesma coisa do exercício anterior, ele não aceita números
+    if  (/\d/.test(name)) {
+        updateResult(feedback, "Inválido. Números não são reconhecidos", "error")
+        return
+
+    }
+
+    updateResult(feedback, `Olá, ${name}! Prazer em conhecê-lo`, "success")
+
 }
 
 //Animação de digitação no nome
