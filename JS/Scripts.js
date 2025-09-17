@@ -42,6 +42,10 @@ enter('nt2', checkMedia)
 enter('nt3', checkMedia)
 enter('width', checkPaint)
 enter('height', checkPaint)
+enter('nn1', checkDiference)
+enter('nn2', checkDiference)
+enter('numberr1', checkDivNote)
+enter('numberr2', checkDivNote)
 
 //Animação das respostas 
 function showCards(Index) {
@@ -61,7 +65,7 @@ function updateResult(feedback, text, type) {
 
 showCards(script)
 
-//Função idade
+//Função idade, para definir a classificação
 function checkIdade() {
     const idade = document.getElementById('idade').value.trim()
     const feedback = document.getElementById('r1')
@@ -516,19 +520,19 @@ function checkCalc() {
      }
 
      if (operation === "+") {
-        updateResult(feedback, `${inputCalc1} + ${inputCalc2} é igual a ${addition}`, "info")
+        updateResult(feedback, `${inputCalc1} + ${inputCalc2} é igual a ${addition.toFixed(2)}`, "info")
         return
 
      } else if (operation === "-") {
-         updateResult(feedback, `${inputCalc1} - ${inputCalc2} é igual a ${subtraction}`, "info")
+         updateResult(feedback, `${inputCalc1} - ${inputCalc2} é igual a ${subtraction.toFixed(2)}`, "info")
          return
 
      } else if (operation === "*") {
-        updateResult(feedback, `${inputCalc1} * ${inputCalc2} é igual a ${multiplication}`, "info")
+        updateResult(feedback, `${inputCalc1} * ${inputCalc2} é igual a ${multiplication.toFixed(2)}`, "info")
         return
 
      } else if (operation === "/") {
-        updateResult(feedback, `${inputCalc1} / ${inputCalc2} é igual a ${division}`, "info")
+        updateResult(feedback, `${inputCalc1} / ${inputCalc2} é igual a ${division.toFixed(2)}`, "info")
         return
 
      } else {
@@ -605,6 +609,74 @@ function checkPaint() {
     }
 
     updateResult(feedback, `Vão ser necessários, ${paint} litros de tinta para pintar a parede`, "success")
+
+}
+
+//Função de diferença de números
+function checkDiference() {
+    const number1 = parseFloat(document.getElementById('nn1').value.trim())
+    const number2 = parseFloat(document.getElementById('nn2').value.trim())
+    const feedback = document.getElementById('r16')
+
+    let diference
+
+    if (number1 > number2) {
+        diference = number1 - number2
+
+    } else {
+        diference = number2 - number1
+
+    }
+
+    if (isNaN(number1)) {
+        updateResult(feedback, "Inválido. Digite um número", "error")
+        return
+
+    }
+
+    if (isNaN(number2)) {
+        updateResult(feedback, "Inválido. Digite um número", "error")
+        return
+
+    }
+
+    /* .toFixed(2) seria igual ao :.2f 'format' do Python, para formatação de número, no caso seria: 'format de
+    2 casas decimais */
+    updateResult(feedback, `A diferença é entre ${diference.toFixed(2)} número(s)`, "success")
+
+}
+
+//Função da divisão de notas, se as duas notas são, ou não divisíveis por eles mesmos
+function checkDivNote() {
+    const inputN1 = parseFloat(document.getElementById('numberr1').value.trim())
+    const inputN2 = parseFloat(document.getElementById('numberr2').value.trim())
+    const feedback = document.getElementById('r17')
+
+    if (isNaN(inputN1)) {
+        updateResult(feedback, "Inválido. Digite uma nota", "error")
+        return
+
+    }
+
+    if (isNaN(inputN2)) {
+        updateResult(feedback, "Inválido. Digite uma nota", "error")
+        return
+        
+    }
+
+    if (inputN1 === 0) {
+        updateResult(feedback, "Não é possível dividir por 0", "error")
+        return
+
+    } else if (inputN1 % inputN2 === 0) {
+        updateResult(feedback, `${inputN1} é múltiplo de ${inputN2}`, "success")
+        return
+
+    } else {
+         updateResult(feedback, `${inputN1} não é múltiplo de ${inputN2}`, "info")
+         return
+
+    }
 
 }
 
