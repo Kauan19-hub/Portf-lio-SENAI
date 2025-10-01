@@ -60,6 +60,7 @@ enter('nmro6', checkVetor2)
 enter('nmro7', checkVetor2)
 enter('nmro8', checkVetor2)
 enter('idade', checkVetor3)
+enter('contador', checkVetor3)
 
 //Animação das respostas 
 function showCards(Index) {
@@ -358,12 +359,12 @@ function animateWrite(element, text, speed = 90) {
 
 //Função formulário, cada inbox tem suas regras, e fórmulas reais para validação 
 function checkForms() {
-    let inputName = document.getElementById('name').value.trim()
-    let inputCPF = document.getElementById('cpf').value.trim()
-    let inputEmail = document.getElementById('email').value.trim()
-    let inputPassword = document.getElementById('password').value.trim()
-    let selectGender = document.getElementById('gender').value.trim()
-    let feedback = document.getElementById('r9')
+    const inputName = document.getElementById('name').value.trim()
+    const inputCPF = document.getElementById('cpf').value.trim()
+    const inputEmail = document.getElementById('email').value.trim()
+    const inputPassword = document.getElementById('password').value.trim()
+    const selectGender = document.getElementById('gender').value.trim()
+    const feedback = document.getElementById('r9')
 
     if (inputName === "") {
         updateResult(feedback, "Digite seu nome", "error")
@@ -732,77 +733,18 @@ function checkVetor2() {
     
     
     const numeros = [numero1, numero2, numero3, numero4, numero5, numero6, numero7, numero8]
-    const soma = numeros.reduce((acc, val) => acc + val, 0)
-    const mediaNumeros = soma / numeros.length
-    
+
     if (numeros.some(isNaN)) {
         updateResult(feedback, "Inválido. Os campos devem ser preenchidos com números inteiros", "error")
         return
     }
 
+    const soma = numeros.reduce((acc, val) => acc + val, 0)
+    const mediaNumeros = soma / numeros.length
+    
     updateResult(feedback, `Média aritmética: ${mediaNumeros.toFixed(2)}`, "success")
 
 }
-
-let idade = []
-
-function checkVetor3() {
-    const inputIdade = document.getElementById('idade').value.trim()
-    const feedback = document.getElementById('r20')
-    const contador = document.getElementById('contador')
-
-    const idadeNumero = parseFloat(inputIdade)
-
-    if (isNaN(idadeNumero) || idadeNumero< 0) {
-        updateResult(feedback, "Inválido. Digite uma idade", "error")
-        return
-
-    }
-
-    if (idade.length >= 20) {
-        updateResult(feedback, "As 20 idades já foram adicionadas", "warning")
-        return
-
-    }
-
-    idade.push(idadeNumero)
-    contador.textContent = `${idade.length} - 20 idades adicionadas`
-    document.getElementById('idade').value = ""
-
-    if (idade.length === 20) {
-        document.getElementById('verify').disabled = false
-        updateResult(feedback, "20 idades inseridas. Agora você já pode verificar a média", "info")
-
-    }
-
-}
-
-function addIdade() {
-    const feedback = document.getElementById('r20')
-
-    if (idade.length < 20) {
-        updateResult(feedback, "Está faltando idades", "warning")
-        return
-
-    }
-
-    const soma = idade.reduce((acc, val) => acc + val, 0)
-    const media = soma / idade.length
-    const acimaMedia = idade.filter(idade => idade > media)
-
-    if (acimaMedia.length === 0) {
-        updateResult(feedback, "Nenhuma idade está acima da média", "success")
-
-    } else {
-        updateResult(feedback, `Média: ${media.toFixed(2)}, Idades acima da média: ${acimaMedia.join(", ")}`, "success")
-
-    }
-
-    idade = []
-    document.getElementById('contador').textContent = "0 - 20 idades adicionadas"
-    document.getElementById('verify').disabled = true
-
-} 
 
 //Animação de digitação no nome
 const name_of_element = document.getElementById('type')
@@ -815,5 +757,3 @@ const nav = document.querySelector('.navegation')
 navResponsive.addEventListener('click', () => nav.classList.toggle('active'))
 
 
-// Desenvolva um programa que leia 10 números e apresente os valores pares. Caso não tenha nenhum número par apresente a mensagem “Todos os números são ímpares.”​
-// Desenvolva um programa que a partir de um vetor de Strings com 10 nomes inicializados na declaração    leia um novo nome e verifique se ele está armazenado no vetor, se estiver, apresenta a posição (índice) onde ele está,  caso contrário, apresente a mensagem “Nome não encontrado!”​
