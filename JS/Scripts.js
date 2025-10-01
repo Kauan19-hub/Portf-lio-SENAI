@@ -46,6 +46,20 @@ enter('nn1', checkDiference)
 enter('nn2', checkDiference)
 enter('numberr1', checkDivNote)
 enter('numberr2', checkDivNote)
+enter('n1', checkVetor1)
+enter('n2', checkVetor1)
+enter('n3', checkVetor1)
+enter('n4', checkVetor1)
+enter('n5', checkVetor1)
+enter('nmro1', checkVetor2)
+enter('nmro2', checkVetor2)
+enter('nmro3', checkVetor2)
+enter('nmro4', checkVetor2)
+enter('nmro5', checkVetor2)
+enter('nmro6', checkVetor2)
+enter('nmro7', checkVetor2)
+enter('nmro8', checkVetor2)
+enter('idade', checkVetor3)
 
 //Animação das respostas 
 function showCards(Index) {
@@ -680,12 +694,126 @@ function checkDivNote() {
 
 }
 
+function checkVetor1() {
+    const numero1 = parseInt(document.getElementById('n1').value.trim())
+    const numero2 = parseInt(document.getElementById('n2').value.trim())
+    const numero3 = parseInt(document.getElementById('n3').value.trim())
+    const numero4 = parseInt(document.getElementById('n4').value.trim())
+    const numero5 = parseInt(document.getElementById('n5').value.trim())
+    const feedback = document.getElementById('r18')
+
+    const numeros = [numero1, numero2, numero3, numero4, numero5]
+
+    if (numeros.some(isNaN)) {
+        updateResult(feedback, "Inválido. Os campos devem ser preenchidos com números inteiros", "error")
+        return
+
+    }
+
+    const soma = numeros.reduce((acc, val) => acc + val, 0)
+    const media = soma / numeros.length
+    const maiorNumero = Math.max(...numeros)
+    const menorNumero = Math.min(...numeros)
+
+    updateResult(feedback, `Soma: ${soma}, Média: ${media.toFixed(2)}, Maior: ${maiorNumero}, Menor: ${menorNumero}`, "info")
+
+}
+
+function checkVetor2() { 
+    const numero1 = parseInt(document.getElementById('nmro1').value.trim())
+    const numero2 = parseInt(document.getElementById('nmro2').value.trim())
+    const numero3 = parseInt(document.getElementById('nmro3').value.trim())
+    const numero4 = parseInt(document.getElementById('nmro4').value.trim())
+    const numero5 = parseInt(document.getElementById('nmro5').value.trim())
+    const numero6 = parseInt(document.getElementById('nmro6').value.trim())
+    const numero7 = parseInt(document.getElementById('nmro7').value.trim())
+    const numero8 = parseInt(document.getElementById('nmro8').value.trim())
+    const feedback = document.getElementById('r19')
+    
+    
+    const numeros = [numero1, numero2, numero3, numero4, numero5, numero6, numero7, numero8]
+    const soma = numeros.reduce((acc, val) => acc + val, 0)
+    const mediaNumeros = soma / numeros.length
+    
+    if (numeros.some(isNaN)) {
+        updateResult(feedback, "Inválido. Os campos devem ser preenchidos com números inteiros", "error")
+        return
+    }
+
+    updateResult(feedback, `Média aritmética: ${mediaNumeros.toFixed(2)}`, "success")
+
+}
+
+let idade = []
+
+function checkVetor3() {
+    const inputIdade = document.getElementById('idade').value.trim()
+    const feedback = document.getElementById('r20')
+    const contador = document.getElementById('contador')
+
+    const idadeNumero = parseFloat(inputIdade)
+
+    if (isNaN(idadeNumero) || idadeNumero< 0) {
+        updateResult(feedback, "Inválido. Digite uma idade", "error")
+        return
+
+    }
+
+    if (idade.length >= 20) {
+        updateResult(feedback, "As 20 idades já foram adicionadas", "warning")
+        return
+
+    }
+
+    idade.push(idadeNumero)
+    contador.textContent = `${idade.length} - 20 idades adicionadas`
+    document.getElementById('idade').value = ""
+
+    if (idade.length === 20) {
+        document.getElementById('verify').disabled = false
+        updateResult(feedback, "20 idades inseridas. Agora você já pode verificar a média", "info")
+
+    }
+
+}
+
+function addIdade() {
+    const feedback = document.getElementById('r20')
+
+    if (idade.length < 20) {
+        updateResult(feedback, "Está faltando idades", "warning")
+        return
+
+    }
+
+    const soma = idade.reduce((acc, val) => acc + val, 0)
+    const media = soma / idade.length
+    const acimaMedia = idade.filter(idade => idade > media)
+
+    if (acimaMedia.length === 0) {
+        updateResult(feedback, "Nenhuma idade está acima da média", "success")
+
+    } else {
+        updateResult(feedback, `Média: ${media.toFixed(2)}, Idades acima da média: ${acimaMedia.join(", ")}`, "success")
+
+    }
+
+    idade = []
+    document.getElementById('contador').textContent = "0 - 20 idades adicionadas"
+    document.getElementById('verify').disabled = true
+
+} 
+
 //Animação de digitação no nome
 const name_of_element = document.getElementById('type')
-animateWrite(name_of_element, 'Eu Sou Kauan Vinícius', 120)
+animateWrite(name_of_element, 'Kauan Vinícius', 120)
 
 //Permite que a navbar em tela mobile seja clicável
 const navResponsive = document.querySelector('.menu_responsive')
 const nav = document.querySelector('.navegation')
 
 navResponsive.addEventListener('click', () => nav.classList.toggle('active'))
+
+
+// Desenvolva um programa que leia 10 números e apresente os valores pares. Caso não tenha nenhum número par apresente a mensagem “Todos os números são ímpares.”​
+// Desenvolva um programa que a partir de um vetor de Strings com 10 nomes inicializados na declaração    leia um novo nome e verifique se ele está armazenado no vetor, se estiver, apresenta a posição (índice) onde ele está,  caso contrário, apresente a mensagem “Nome não encontrado!”​

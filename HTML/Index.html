@@ -18,22 +18,11 @@
     </div>
 
     <ul>
-      <li class="navbox">
-        <a href="#start">Início</a>
-      </li>
-
-      <li class="navbox">
-        <a href="#about">Sobre</a>
-      </li>
-
-      <li class="navbox">
-        <a href="#exercises">Tarefas</a>
-      </li>
-
-      <li class="navbox">
-        <a href="#networks">Redes</a>
-      </li>
-    </ul>
+        <li class="navbox"><a href="#start">Início</a></li>
+        <li class="navbox"><a href="#about">Sobre</a></li>
+        <li class="navbox"><a href="#exercises">Tarefas</a></li>
+        <li class="navbox"><a href="#networks">Redes</a></li>
+   </ul>
   </nav>
 
   <header id="start" class="header">
@@ -50,10 +39,11 @@
     <h2 class="subtitulo">SOBRE O <span>PORTIFÓLIO</span></h2>
     <div class="subbox">
       <p class="subpar">
-        Olá! Seja bem-vindo(a). Este portifólio foi desenvolvido para
-        apresentar atividades de forma mais interativa e, com foco em
-        aprimorar meus conhecimentos em Front-End e aprender mais sobre
-        projetos e desenvolvimento de sites.
+        Olá! Seja bem-vindo(a). Meu nome é Kauan, e este portifólio foi desenvolvido  durante 5 meses para apresentar atividades
+        de forma mais interativa e, com foco em aprimorar meus conhecimentos em Front-End e aprender mais sobre projetos e desenvolvimento
+        de sites. O portifólio contém um pouco mais de 20 exercícios, 100% funcionais com tratativas de erros completas para garantir que o usuário
+        entenda o que precisa ser feito e quais números, textos, são aceitos, ou não. O portifólio é responsivo, ou seja, ele se adapta em qualquer
+        tamanho de tela! A responsividade foi criada diretamente no CSS3 usando Media Query.
       </p>
     </div>
   </section>
@@ -267,9 +257,66 @@
         </div>
         <p class="result" id="r9"></p>
       </div>
+
+        <div class="card">
+        <h2>18° Exercício</h2>
+        <p class="question">Vetor | Digite 5 números inteiros para revelar o dobro de cada um</p>
+        <div class="answer-box">
+
+          <input type="number" id="n1" placeholder="Primeiro Número" />
+
+          <input type="number" id="n2" placeholder="Segundo Número" />
+
+          <input type="number" id="n3" placeholder="Terceiro Número" />
+
+          <input type="number" id="n4" placeholder="Quarto Número" />
+
+          <input type="number" id="n5" placeholder="Quinto Número" />
+
+          <button onclick="checkVetor1()">Verificar</button>
+        </div>
+        <p class="result" id="r18"></p>
+      </div>
+
+      <div class="card">
+        <h2>19° Exercício</h2>
+        <p class="question">Vetor | Digite 8 números inteiros para revelar a média aritmética</p>
+        <div class="answer-box">
+
+          <input type="number" id="nmro1" placeholder="Primeiro Número" />
+
+          <input type="number" id="nmro2" placeholder="Segundo Número" />
+
+          <input type="number" id="nmro3" placeholder="Terceiro Número" />
+
+          <input type="number" id="nmro4" placeholder="Quarto Número" />
+
+          <input type="number" id="nmro5" placeholder="Quinto Número" />
+
+          <input type="number" id="nmro6" placeholder="Sexto Número" />
+
+          <input type="number" id="nmro7" placeholder="Sétimo Número" />
+
+          <input type="number" id="nmro8" placeholder="Oitavo Número" />
+
+          <button onclick="checkVetor2()">Verificar</button>
+        </div>
+        <p class="result" id="r19"></p>
+      </div>
+
+        <div class="card">
+        <h2>20° Exercício</h2>
+        <p class="question">Vetor | Digite 20 idades diferentes de pessoas para receber as idades acima da média</p>
+        <div class="answer-box">
+
+          <input type="number" id="idade" placeholder="Digite a idade" />
+          <button onclick="checkVetor3()">Adicionar Idade</button>
+          <button id="verify" onclick="addIdade()" disabled>Verificar</button>
+          <p id="contador">0 - 20 idades adicionadas</p>
+        </div>
+        <p class="result" id="r20"></p>
+      </div>
     </div>
-
-
   </section>
 
   <section id="networks">
