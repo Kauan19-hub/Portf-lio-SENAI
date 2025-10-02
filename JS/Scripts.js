@@ -59,6 +59,7 @@ enter('nmro5', checkVetor2)
 enter('nmro6', checkVetor2)
 enter('nmro7', checkVetor2)
 enter('nmro8', checkVetor2)
+enter('numPar', checkVetor3)
 enter('nomes', checkVetor4)
 
 //Animação das respostas 
@@ -745,6 +746,24 @@ function checkVetor2() {
 
 }
 
+function checkVetor3() {
+    const numeroInt = parseInt(document.getElementById('numPar').value.trim())
+    const feedback = document.getElementById('r20')
+    
+    if (isNaN(numeroInt) && (numeroInt < 0)) {
+        updateResult(feedback, "Inválido. Digite um número inteiro", "error")
+        return
+
+    }
+
+    if (!Number.isInteger(numeroInt)) {
+        updateResult(feedback, "Inválido. O número precisa ser inteiro", "error")
+        return
+
+    }
+
+} 
+
 function checkVetor4() {
     const nome = document.getElementById('nomes').value.trim()
     const feedback = document.getElementById('r21')
@@ -770,6 +789,7 @@ function checkVetor4() {
     }
     
 }
+
 
 //Animação de digitação no nome
 const name_of_element = document.getElementById('type')
