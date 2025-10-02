@@ -59,8 +59,7 @@ enter('nmro5', checkVetor2)
 enter('nmro6', checkVetor2)
 enter('nmro7', checkVetor2)
 enter('nmro8', checkVetor2)
-enter('idade', checkVetor3)
-enter('contador', checkVetor3)
+enter('nomes', checkVetor4)
 
 //Animação das respostas 
 function showCards(Index) {
@@ -364,7 +363,7 @@ function checkForms() {
     const inputEmail = document.getElementById('email').value.trim()
     const inputPassword = document.getElementById('password').value.trim()
     const selectGender = document.getElementById('gender').value.trim()
-    const feedback = document.getElementById('r9')
+    const feedback = document.getElementById('r17')
 
     if (inputName === "") {
         updateResult(feedback, "Digite seu nome", "error")
@@ -451,7 +450,7 @@ function checkForms() {
 //Função de saudações. Usuário digita seu nome, e automaticamente, a máquina o retorna com uma menagem
 function checkNameS() {
    const name = document.getElementById('name2').value.trim()
-   const  feedback = document.getElementById('r10')
+   const  feedback = document.getElementById('r9')
 
     if (name.trim() === "") {
         updateResult(feedback, "Inválido. Digite o seu nome", "error")
@@ -474,7 +473,7 @@ function checkNameS() {
 com uma mensagem */
 function checkMateriaFav() {
     const inputMateria = document.getElementById('materiaFav').value.trim()
-    const feedback = document.getElementById('r11')
+    const feedback = document.getElementById('r10')
 
      if (inputMateria.trim() === "") {
         updateResult(feedback, "Inválido. Digite a sua matéria favorita", "error")
@@ -497,7 +496,7 @@ function checkMateriaFav() {
 com uma mensagem */
 function checkDate() {
     const inputDate = document.getElementById('date').value.trim()
-    const feedback = document.getElementById('r12')
+    const feedback = document.getElementById('r11')
 
      if (inputDate.trim() === "") {
         updateResult(feedback, "Inválido. Digite a data de hoje", "error")
@@ -515,7 +514,7 @@ function checkCalc() {
     const inputCalc1 = parseFloat(document.getElementById('number1').value.trim())
     const inputCalc2 = parseFloat(document.getElementById('number2').value.trim())
     const operation = document.getElementById('oper').value.trim()
-    const feedback = document.getElementById('r13')
+    const feedback = document.getElementById('r12')
     
     const addition = inputCalc1 + inputCalc2
     const subtraction = inputCalc1 - inputCalc2
@@ -563,7 +562,7 @@ function checkMedia() {
     const note1 = parseFloat(document.getElementById('nt1').value.trim())
     const note2 = parseFloat(document.getElementById('nt2').value.trim())
     const note3 = parseFloat(document.getElementById('nt3').value.trim())
-    const feedback = document.getElementById('r14')
+    const feedback = document.getElementById('r13')
 
     let media = (note1 + note2 + note3) / 2
 
@@ -594,7 +593,7 @@ necessários para a pintua */
 function checkPaint() {
     const inputWidth = parseFloat(document.getElementById('width').value.trim())
     const inputHeight = parseFloat(document.getElementById('height').value.trim())
-    const feedback = document.getElementById('r15')
+    const feedback = document.getElementById('r14')
 
     const area = inputWidth * inputHeight
     const paint = (area / 2).toFixed(2)
@@ -631,7 +630,7 @@ function checkPaint() {
 function checkDiference() {
     const number1 = parseFloat(document.getElementById('nn1').value.trim())
     const number2 = parseFloat(document.getElementById('nn2').value.trim())
-    const feedback = document.getElementById('r16')
+    const feedback = document.getElementById('r15')
 
     let diference
 
@@ -665,7 +664,7 @@ function checkDiference() {
 function checkDivNote() {
     const inputN1 = parseFloat(document.getElementById('numberr1').value.trim())
     const inputN2 = parseFloat(document.getElementById('numberr2').value.trim())
-    const feedback = document.getElementById('r17')
+    const feedback = document.getElementById('r16')
 
     if (isNaN(inputN1)) {
         updateResult(feedback, "Inválido. Digite uma nota", "error")
@@ -744,6 +743,32 @@ function checkVetor2() {
     
     updateResult(feedback, `Média aritmética: ${mediaNumeros.toFixed(2)}`, "success")
 
+}
+
+function checkVetor4() {
+    const nome = document.getElementById('nomes').value.trim()
+    const feedback = document.getElementById('r21')
+
+    const nomes = ["Kauan", "Helena", "Robert", "Lucca", "Giovanna", "Gabriela", "Fernanda", "Thiago", "Mateus", "Yasmin"]
+
+    const indice = nomes.findIndex(n => n.toLowerCase() === nome.toLowerCase()) 
+
+    if (isNaN(indice)) {
+        updateResult(feedback, "Digite um nome", "error")
+        return
+
+    }
+
+    if (indice !== -1) {
+         updateResult(feedback, `Este nome encontra-se na posição ${indice}`, "success")
+         return
+
+    } else {
+        updateResult(feedback, "Inválido. Este nome não foi encontrado", "error")
+        return
+
+    }
+    
 }
 
 //Animação de digitação no nome
