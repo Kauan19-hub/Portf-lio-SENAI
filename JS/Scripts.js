@@ -60,7 +60,36 @@ enter('nmro6', checkVetor2)
 enter('nmro7', checkVetor2)
 enter('nmro8', checkVetor2)
 enter('numPar', checkVetor3)
+enter('numPar2', checkVetor3)
+enter('numPar3', checkVetor3)
+enter('numPar4', checkVetor3)
+enter('numPar5', checkVetor3)
+enter('numPar6', checkVetor3)
+enter('numPar7', checkVetor3)
+enter('numPar8', checkVetor3)
+enter('numPar9', checkVetor3)
+enter('numPar10', checkVetor3)
 enter('nomes', checkVetor4)
+enter('idade1', checkVetor5)
+enter('idade2', checkVetor5)
+enter('idade3', checkVetor5)
+enter('idade4', checkVetor5)
+enter('idade5', checkVetor5)
+enter('idade6', checkVetor5)
+enter('idade7', checkVetor5)
+enter('idade8', checkVetor5)
+enter('idade9', checkVetor5)
+enter('idade10', checkVetor5)
+enter('idade11', checkVetor5)
+enter('idade12', checkVetor5)
+enter('idade13', checkVetor5)
+enter('idade14', checkVetor5)
+enter('idade15', checkVetor5)
+enter('idade16', checkVetor5)
+enter('idade17', checkVetor5)
+enter('idade18', checkVetor5)
+enter('idade19', checkVetor5)
+enter('idade20', checkVetor5)
 
 //Animação das respostas 
 function showCards(Index) {
@@ -695,6 +724,7 @@ function checkDivNote() {
 
 }
 
+// Função primeiro vetor, onde 5 números são escolhidas para revelar o dobro de cada um
 function checkVetor1() {
     const numero1 = parseInt(document.getElementById('n1').value.trim())
     const numero2 = parseInt(document.getElementById('n2').value.trim())
@@ -720,6 +750,7 @@ function checkVetor1() {
 
 }
 
+// Função segundo vetor, onde 8 números são escolhidos e exibe a média aritmética deles
 function checkVetor2() { 
     const numero1 = parseInt(document.getElementById('nmro1').value.trim())
     const numero2 = parseInt(document.getElementById('nmro2').value.trim())
@@ -731,7 +762,6 @@ function checkVetor2() {
     const numero8 = parseInt(document.getElementById('nmro8').value.trim())
     const feedback = document.getElementById('r19')
     
-    
     const numeros = [numero1, numero2, numero3, numero4, numero5, numero6, numero7, numero8]
 
     if (numeros.some(isNaN)) {
@@ -741,35 +771,51 @@ function checkVetor2() {
 
     const soma = numeros.reduce((acc, val) => acc + val, 0)
     const mediaNumeros = soma / numeros.length
-    
     updateResult(feedback, `Média aritmética: ${mediaNumeros.toFixed(2)}`, "success")
 
 }
 
+// Função terceiro vetor, onde se escolhe 10 números e exibe todos os pares
 function checkVetor3() {
-    const numeroInt = parseInt(document.getElementById('numPar').value.trim())
+    const numeros = [
+         parseInt(document.getElementById('numPar').value.trim()),
+         parseInt(document.getElementById('numPar2').value.trim()),
+         parseInt(document.getElementById('numPar3').value.trim()),
+         parseInt(document.getElementById('numPar4').value.trim()),
+         parseInt(document.getElementById('numPar5').value.trim()),
+         parseInt(document.getElementById('numPar6').value.trim()),
+         parseInt(document.getElementById('numPar7').value.trim()),
+         parseInt(document.getElementById('numPar8').value.trim()),
+         parseInt(document.getElementById('numPar9').value.trim()),
+         parseInt(document.getElementById('numPar10').value.trim())
+    ]
+    
     const feedback = document.getElementById('r20')
     
-    if (isNaN(numeroInt) && (numeroInt < 0)) {
-        updateResult(feedback, "Inválido. Digite um número inteiro", "error")
+    if (numeros.some(num => isNaN(num))) {
+        updateResult(feedback, "Inválido. Digite um número", "error")
         return
 
     }
-
-    if (!Number.isInteger(numeroInt)) {
-        updateResult(feedback, "Inválido. O número precisa ser inteiro", "error")
+    
+    if (numeros.some(num => !Number.isInteger(num))) {
+         updateResult(feedback, "Inválido. O número precisa ser inteiro", "error")
         return
 
     }
-
+    
+    const numPares = numeros.filter(num => num % 2 === 0) 
+    updateResult(feedback, `Os números pares são: ${numPares.join(', ')}`, "success")
+         return
 } 
 
+// Função quarto vetor, onde 10 nomes são definidos em uma constância, e o usuário escolhe um nome. Se o nome
+// estiver na lista, exibe a posição, senão, exibe mensagem de erro
 function checkVetor4() {
     const nome = document.getElementById('nomes').value.trim()
     const feedback = document.getElementById('r21')
 
     const nomes = ["Kauan", "Helena", "Robert", "Lucca", "Giovanna", "Gabriela", "Fernanda", "Thiago", "Mateus", "Yasmin"]
-
     const indice = nomes.findIndex(n => n.toLowerCase() === nome.toLowerCase()) 
 
     if (isNaN(indice)) {
@@ -787,9 +833,47 @@ function checkVetor4() {
         return
 
     }
-    
 }
 
+// Função quinto vetor, onde serão escolhidos 20 idades diferentes, para exibir quais deles estão acima da média
+function checkVetor5() {
+    const idades = [
+        parseInt(document.getElementById('idade1').value.trim()),
+        parseInt(document.getElementById('idade2').value.trim()),
+        parseInt(document.getElementById('idade3').value.trim()),
+        parseInt(document.getElementById('idade4').value.trim()),
+        parseInt(document.getElementById('idade5').value.trim()),
+        parseInt(document.getElementById('idade6').value.trim()),
+        parseInt(document.getElementById('idade7').value.trim()),
+        parseInt(document.getElementById('idade8').value.trim()),
+        parseInt(document.getElementById('idade9').value.trim()),
+        parseInt(document.getElementById('idade10').value.trim()),
+        parseInt(document.getElementById('idade11').value.trim()),
+        parseInt(document.getElementById('idade12').value.trim()),
+        parseInt(document.getElementById('idade13').value.trim()),
+        parseInt(document.getElementById('idade14').value.trim()),
+        parseInt(document.getElementById('idade15').value.trim()),
+        parseInt(document.getElementById('idade16').value.trim()),
+        parseInt(document.getElementById('idade17').value.trim()),
+        parseInt(document.getElementById('idade18').value.trim()),
+        parseInt(document.getElementById('idade19').value.trim())
+
+    ]
+
+    const feedback = document.getElementById('r20')
+
+    if (idades.some(idades => isNaN(idades))) {
+        updateResult(feedback, "Inválido. Digite as idades", "error")
+        return
+
+    }
+
+    const soma = idades.reduce((acc, idades) => acc + idades, 0)
+    const media = soma / idades.length
+    const acimaMedia = idades.filter(idades => idades > media)
+    updateResult(feedback, `Média: ${media.toFixed(2)}, acima da média: ${acimaMedia.join(', ')}`)
+
+}
 
 //Animação de digitação no nome
 const name_of_element = document.getElementById('type')
