@@ -141,14 +141,21 @@ function checkParImpar() {
     const num = document.getElementById('numero').value.trim()
     const feedback = document.getElementById('r2')
 
-    if (num === "") {
+    if (isNaN(num)) {
         updateResult(feedback, "Inválido. Digite um número", "error")
         return
 
     }
 
     const numero = Number(num)
+
     if (!Number.isInteger(numero)) {
+        updateResult(feedback, "Inválido. O número precisa ser inteiro", "error")
+        return
+
+    }
+
+     if (num <= 0) {
         updateResult(feedback, "Inválido. O número precisa ser inteiro", "error")
         return
 
@@ -345,7 +352,7 @@ function checkFatorial() {
     }
 
     if (!Number.isInteger(number)) {
-        updateResult(feedback, "Inválido. 0 número precisa ser inteiro", "error")
+        updateResult(feedback, "Inválido. O número precisa ser inteiro", "error")
         return
 
     }
@@ -856,11 +863,12 @@ function checkVetor5() {
         parseInt(document.getElementById('idade16').value.trim()),
         parseInt(document.getElementById('idade17').value.trim()),
         parseInt(document.getElementById('idade18').value.trim()),
-        parseInt(document.getElementById('idade19').value.trim())
+        parseInt(document.getElementById('idade19').value.trim()),
+        parseInt(document.getElementById('idade20').value.trim())
 
     ]
 
-    const feedback = document.getElementById('r20')
+    const feedback = document.getElementById('r22')
 
     if (idades.some(idades => isNaN(idades))) {
         updateResult(feedback, "Inválido. Digite as idades", "error")
@@ -868,10 +876,23 @@ function checkVetor5() {
 
     }
 
-    const soma = idades.reduce((acc, idades) => acc + idades, 0)
+  if (idades.some(idade => !Number.isInteger(idade))) {
+    updateResult(feedback, "Inválido. As idades precisam ser inteiros", "error")
+    return
+
+  }
+
+    if (idades.some(idade => idade < 0)) {
+        updateResult(feedback, "Inválido. Idade não pode ser negativa", "error")
+        return
+
+    }
+
+    const soma = idades.reduce((acc, idade) => acc + idade, 0)
     const media = soma / idades.length
-    const acimaMedia = idades.filter(idades => idades > media)
-    updateResult(feedback, `Média: ${media.toFixed(2)}, acima da média: ${acimaMedia.join(', ')}`)
+    const acimaMedia = idades.filter(idade => idade > media)
+
+    updateResult(feedback, `Média: ${media.toFixed(2)}, acima da média: ${acimaMedia.join(', ')}`, "success")
 
 }
 
@@ -884,5 +905,3 @@ const navResponsive = document.querySelector('.menu_responsive')
 const nav = document.querySelector('.navegation')
 
 navResponsive.addEventListener('click', () => nav.classList.toggle('active'))
-
-
