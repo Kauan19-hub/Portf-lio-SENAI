@@ -120,20 +120,25 @@ function checkIdade() {
 
     }
 
-    const idade2 = Number(idade)
-    if (!Number.isInteger(idade2) || idade < 0) {
-        updateResult(feedback, "Inválido. O número precisa ser inteiro", "error")
+    const idadeInput = Number(idade)
 
-    } if (idade >= 0 && idade < 18) {
+    if (!Number.isInteger(idadeInput) || idadeInput < 0) {
+        updateResult(feedback, "Inválido. O número precisa ser inteiro", "error")
+        return
+
+    }
+
+    if (idade < 18) {
         updateResult(feedback, "Menor de idade", "warning")
 
-    } else if (idade >= 18 && idade <= 100) {
+    } else if ( idade <= 100) {
         updateResult(feedback, "Maior de idade", "success")
 
     } else {
-        updateResult(feedback, "Idade inválida", "error")
+        updateResult("Idade inválida", "error")
 
     }
+
 }
 
 //Função números pares e ímpares
@@ -596,32 +601,31 @@ function checkCalc() {
 
 //Função média de notas, onde é calculada a média de 3 notas escolhidas pelo usuário
 function checkMedia() {
-    const note1 = parseFloat(document.getElementById('nt1').value.trim())
-    const note2 = parseFloat(document.getElementById('nt2').value.trim())
-    const note3 = parseFloat(document.getElementById('nt3').value.trim())
     const feedback = document.getElementById('r13')
+    const notas = [
+        parseFloat(document.getElementById("nt1").value.trim()),
+        parseFloat(document.getElementById("nt2").value.trim()),
+        parseFloat(document.getElementById("nt3").value.trim())
 
-    let media = (note1 + note2 + note3) / 2
+    ]
 
-    if (isNaN(note1)) {
-         updateResult(feedback, "Inválido. Digite uma nota", "error")
-        return
+    for (let i = 0; i < notas.length; i++) {
+        if (isNaN(notas[i])) {
+            updateResult(feedback, `Inválido. Digite a nota ${i + 1}`, "error")
+            return
+
+        }
+
+        if (notas[i] < 0) {
+            updateResult(feedback, `Inválido. Nota ${i + 1} não pode ser negativo`, "error")
+            return
 
     }
 
-    if (isNaN(note2)) {
-         updateResult(feedback, "Inválido. Digite uma nota", "error")
-        return
+}
 
-    }
-
-    if (isNaN(note3)) {
-         updateResult(feedback, "Inválido. Digite uma nota", "error")
-        return
-
-    }
-
-    updateResult(feedback, `Média da soma: ${media.toFixed(1)}`, "success")
+const media = (notas[0] + notas[1] + notas[2] / 3)
+updateResult(feedback, `Média: ${media.toFixed(1)}`, "success")
 
 }
 
