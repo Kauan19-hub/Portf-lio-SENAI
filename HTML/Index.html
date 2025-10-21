@@ -41,7 +41,7 @@
       <p class="subpar">
         Olá! Seja bem-vindo(a). Meu nome é Kauan, e este portifólio foi desenvolvido  durante 5 meses para apresentar atividades
         de forma mais interativa e, com foco em aprimorar meus conhecimentos em Front-End e aprender mais sobre projetos e desenvolvimento
-        de sites. O portifólio contém um pouco mais de 20 exercícios, 100% funcionais com tratativas de erros completas para garantir que o usuário
+        de sites. O portifólio contém um pouco mais de 40 exercícios, 100% funcionais com tratativas de erros completas para garantir que o usuário
         entenda o que precisa ser feito e quais números, textos, são aceitos, ou não. O portifólio é responsivo, ou seja, ele se adapta em qualquer
         tamanho de tela! A responsividade foi criada diretamente no CSS3 usando Media Query.
       </p>
@@ -358,6 +358,27 @@
         </div>
         <p class="result" id="r22"></p>
       </div>
+
+      <div class="card">
+        <h2>23° Exercício</h2>
+        <p class="question">IMC | Digite seu peso, e sua altura</p>
+        <div class="answer-box">
+          <input type="text" id="altura" placeholder="Digite sua altura" />
+          <input type="text" id="peso" placeholder="Digite seu peso" />
+          <button onclick="checkIMC()">Verificar</button>
+        </div>
+        <p class="result" id="r23"></p>
+      </div>
+
+      <div class="card">
+        <h2>24° Exercício</h2>
+        <p class="question">Escolha um ano para vefificar se ele é bissexto, ou não</p>
+        <div class="answer-box">
+          <input type="text" id="anoB" placeholder="Digite o ano" />
+          <button onclick="checkAno()">Verificar</button>
+        </div>
+        <p class="result" id="r24"></p>
+      </div>
       
     </div>
   </section>
@@ -402,5 +423,4 @@
 
   <script src="/JS/Scripts.js"></script>
 </body>
-
 </html>

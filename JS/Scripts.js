@@ -90,6 +90,9 @@ enter('idade17', checkVetor5)
 enter('idade18', checkVetor5)
 enter('idade19', checkVetor5)
 enter('idade20', checkVetor5)
+enter('peso', checkIMC)
+enter('altura', checkIMC)
+enter('anoB', checkAno)
 
 //Animação das respostas 
 function showCards(Index) {
@@ -898,6 +901,83 @@ function checkVetor5() {
 
     updateResult(feedback, `Média: ${media.toFixed(2)}, acima da média: ${acimaMedia.join(', ')}`, "success")
 
+}
+
+function checkIMC() {
+    const peso = parseFloat(document.getElementById('peso').value.trim())
+    const altura = parseFloat(document.getElementById('altura').value.trim())
+    const feedback = document.getElementById('r23')
+
+     if (isNaN(peso)) {
+        updateResult(feedback, "Digite seu peso", "error")
+        return
+
+     }
+
+    if (isNaN(altura)) {
+        updateResult(feedback, "Digite sua altura", "error")
+        return
+
+    }
+
+    if (!peso || !altura || altura <= 0) {
+        updateResult(feedback, "Insira números válidos", "warning")
+        return
+
+    }
+
+    const imc = peso / (altura * altura)
+    let classificacao = ""
+
+    if (imc < 18.5 ) {
+        classificacao = "Abaixo do normal", "info"
+
+    } else if (imc < 24.5 ) {
+        classificacao = "Peso normal", "info"
+
+    } else if (imc < 29.9) {
+        classificacao = "Sobrepeso", "info"
+
+    } else if (imc < 34.9) {
+        classificacao = "Obesidade leve", "warning"
+
+    } else {
+        classificacao = "Obesidade grave", "warning"
+
+    }
+
+    updateResult(feedback, `Seu IMC: ${imc.toFixed(2)} - ${classificacao}`, "success")
+
+}
+
+function checkAno() {
+    const ano = document.getElementById('anoB').value.trim()
+    const feedback = document.getElementById('r24')
+
+    if (ano === "") {
+        updateResult(feedback, "Inválido. Digite um ano", "error")
+        return
+
+    }
+
+    const anoo = Number(ano)
+
+    if (isNaN(anoo) || !Number.isInteger(anoo) || anoo <= 0) {
+        updateResult(feedback, "Inválido. Digite um número inteiro positivo", "error")
+        return
+
+    }
+
+    const anoBi = (anoo % 4 === 0 && anoo % 100 !== 0) || (anoo % 400 === 0)
+
+    if (anoBi) {
+        updateResult(feedback, `${ano} é bissexto`, "success")
+        return
+
+    } else {
+        updateResult(feedback, `${ano} não é bissexto`, "error")
+
+    }
 }
 
 //Animação de digitação no nome
