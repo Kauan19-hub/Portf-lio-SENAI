@@ -63,6 +63,7 @@ html {
 
 }
 
+/* Animação de imagem */
 @keyframes float {
     0% {
         transform: translateY(0px); 
@@ -129,6 +130,7 @@ html {
 
 }
 
+/* Responsividade */
 @media (max-width: 750px) {
     .menu_responsive {
         display: block;
@@ -188,9 +190,7 @@ html {
     gap: 25px;
     align-items: center;
     list-style: none;
-    padding: 0;
-    margin: 0;
-  
+
 }
 
 .navegation a {
@@ -199,17 +199,17 @@ html {
     font-size: 1rem;
     padding: 9px 10px;
     cursor: pointer;
-    transition: 0.5s;
 
 }
 
 .navegation a:hover {
     text-decoration: underline;
+    
 }
 
 .header img {
-    width: 140px;
-    height: 140px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 15px;
@@ -233,7 +233,7 @@ html {
 .about {
     max-width: 800px;
     margin: 40px auto;
-    padding: 22px;
+    padding: 28px;
 
 }
 
@@ -245,8 +245,9 @@ html {
 }
 
 .subpar {
-    text-align: center;
+    text-align: justify;
     color: var(--text);
+    margin-bottom: 15px;
     font-size: 16px;
     
 }
@@ -259,7 +260,7 @@ html {
     border-radius: 16px;
     backdrop-filter: blur(10px);
     background-color: rgba(0, 0, 0, 0.10);
-    transition: 0.4s;
+    transition: all 0.4s ease;
     box-shadow: 0 4px 13px rgba(0, 0, 0, 0.7);
 
 }
@@ -398,6 +399,12 @@ html {
 .about-me a {
     color: var(--text);
     text-decoration: none;
+
+}
+
+.about-me a:hover {
+    text-decoration: underline;
+
 }
 
 footer.networks-icons {
@@ -490,6 +497,7 @@ footer.networks-icons {
     
 }
 
+/* Responsividade */
 @media (max-width: 760px) {
     .profile {
         flex-direction: column;
@@ -502,6 +510,7 @@ footer.networks-icons {
     }
 }
 
+/* Responsividade */
 @media (max-width: 480px) {
     .text-info h2 {
         font-size: 22px;
