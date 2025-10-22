@@ -93,6 +93,8 @@ enter('idade20', checkVetor5)
 enter('peso', checkIMC)
 enter('altura', checkIMC)
 enter('anoB', checkAno)
+enter('valor', checkEuro)
+enter('adivinha', checkAdivinha)
 
 //Animação das respostas 
 function showCards(Index) {
@@ -333,7 +335,7 @@ function checkJokenpo() {
     } else if (
         (choices1 === 0 && choices2 === 2) || 
         (choices1 === 1 && choices2 === 0) ||
-         (choices1 === 2 && choices2 === 1)
+        (choices1 === 2 && choices2 === 1)
 
     ) {
     
@@ -903,6 +905,7 @@ function checkVetor5() {
 
 }
 
+// Função checkIMC, onde mostra a classificação de peso do usuário dependendo das informações abaixo
 function checkIMC() {
     const peso = parseFloat(document.getElementById('peso').value.trim())
     const altura = parseFloat(document.getElementById('altura').value.trim())
@@ -950,6 +953,7 @@ function checkIMC() {
 
 }
 
+// Função checkAno, onde mostra se um ano é bissexto, ou não
 function checkAno() {
     const ano = document.getElementById('anoB').value.trim()
     const feedback = document.getElementById('r24')
@@ -976,6 +980,92 @@ function checkAno() {
 
     } else {
         updateResult(feedback, `${ano} não é bissexto`, "error")
+
+    }
+
+}
+
+// Função checkEuro, onde o usuário digita um valor em Euro e esse valor recebe uma conversão para Real (R$)
+function checkEuro() {
+    const valor = document.getElementById('valor').value.trim()
+    const feedback = document.getElementById('r25')
+
+    if (valor === "") {
+        updateResult(feedback, "Inválido. Digite um valor em Euro", "error")
+        return
+
+    }
+
+    const valorEuro = Number(valor) 
+
+    if (isNaN(valorEuro) || valorEuro < 0) {
+        updateResult(feedback, "Inválido. O número não pode ser negativo", "error")
+        return
+
+    }
+
+    if (valorEuro > 1000000000) {
+        updateResult(feedback, "Inválido. O número é alto demais", "error")
+        return
+
+    }
+
+    const taxa = 5.30 //Taxa de conversão
+    const conversao = valorEuro * taxa
+    const formatar = conversao.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL" // Conversão em Real Brasileiro (R$)
+
+    })
+
+    updateResult(feedback, `€$ ${valorEuro} convertido em Reais (R$) vale ${formatar}`, "success")
+
+}
+
+let numSecreto = Math.floor(Math.random() * 100) + 1
+let tentativas = 10
+let jogoAtivo = true
+
+// Função para escolher número entre 1 e 100 e o usuário precisa adivinhar o correto
+function checkAdivinha() {
+    if (!jogoAtivo) return
+
+    const input = document.getElementById('adivinha')
+    const feedback = document.getElementById('r26')
+    const valor = input.value.trim()
+
+    if (valor === "") {
+        updateResult(feedback, "Digite um número", "error")
+        return
+
+    }
+
+    const opiniao = Number(valor)
+
+    if (isNaN(opiniao) || opiniao < 1 || opiniao > 100) {
+        updateResult(feedback, "Inválido. Digite um número entre 1 e 100", "error")
+        return
+
+    }
+
+    tentativas--
+
+    if (opiniao === numSecreto) {
+        updateResult(feedback, `Boa! Acertou. O número era ${numSecreto}`, "success")
+        jogoAtivo = false 
+        return
+
+    } else if (tentativas === 0) {
+        updateResult(feedback, `Vocè perdeu. O número era ${numSecreto}`, "error")
+        jogoAtivo = false
+        return
+
+    } else if (opiniao < numSecreto) {
+        updateResult(feedback, `O número é maior. Ainda restam ${tentativas} restantes`, "warning")
+
+    } else {
+        updateResult(feedback, `O número é menor. Ainda restam ${tentativas} restantes`, "warning")
+        return
 
     }
 }
