@@ -20,22 +20,6 @@ During the development of the portfolio, we applied the main concepts of web dev
 
 ###
 
-**<h2>📂 File Organization :</h2>**
-
-###
-```powershell
-├── 📂 Portf-lio-PWFE
-│   ├── 📂 CSS
-│   │   └── 🎨 Style.css
-│   ├── 📂 HTML
-│   │   └── 🌐 Index.html
-│   ├── 📂 JS
-│   │   └── ⚡ Scripts.js
-└── 📝 README.md
-```
-
-###
-
 > OBS: If you have the 'Live Server' extension installed, try opening the portfolio using the extension! If not, install it at:
  
 ---
