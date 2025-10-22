@@ -6,14 +6,53 @@
 
 }
 
+:root {
+    --blue: #a4d3fc;
+    --orange: #deb887;
+    --orange2: #a67c52;
+    --black: #000000;
+    --white: #ffffff;
+}
+
 body {
-    background-color: #a4d3fc;
+    background-color: var(--blue);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
     overflow-x: hidden;
+
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 9px 11px;
+    
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--black);
+    font-size: 1rem;
+    cursor: pointer;
+
+}
+
+.navbar a:hover {
+    text-decoration: underline;
 
 }
 
@@ -38,8 +77,8 @@ h1 {
     border: none;
     border-radius: 20px;
     transition: 0.4s ease;
-    background-color: #deb887;
-    color: #000000;
+    background-color: var(--orange);
+    color: var(--black);
     font-size: 1rem;
     font-weight: bold;
 
@@ -47,8 +86,8 @@ h1 {
 
 .botão:hover {
     cursor:  pointer;
-    background-color: #a67c52;
-    color: #ffffff;
+    background-color: var(--orange2);
+    color: var(--white);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.29);
 
 }
@@ -56,16 +95,16 @@ h1 {
 
  .pratos {
     padding: 3px;
-    background-color: #fafafa;
+    background-color: var(--white);
     border: none;
     border-radius: 6px;
-    color: #000000;
+    color: var(--black);
     
 }
 
  .sobremesas {
     padding: 3px;
-    background-color: #fafafa;
+    background-color: var(--white);
     border: none;
     border-radius: 6px;
     
@@ -73,7 +112,7 @@ h1 {
 
  .bebidas {
     padding: 3px;
-    background-color: #fafafa;
+    background-color: var(--white);
     border: none;
     border-radius: 6px;
     
@@ -81,14 +120,14 @@ h1 {
 
 .quantidade {
     padding: 3px;
-    background-color: #fafafa;
+    background-color: var(--white);
     border: none;
     border-radius: 6px;
     
 }
  
 .box {
-    border: 2px solid #000000;
+    border: 2px solid var(--black);
     padding: 30px 24px;
     border-radius: 15px;
 
@@ -98,4 +137,52 @@ h1 {
     margin-top: 3px;
     text-align: center;
     font-size: 1.09rem;
+
+}
+
+/* Responsividade  */
+@media (max-width: 760px) {
+    body {
+        padding: 10px;
+       
+    }
+
+    section {
+        padding: 20px;
+        width: 100%;
+
+    }
+
+    .box {
+        padding: 20px 15px;
+
+    }
+
+    h1 {
+        font-size: 1.3rem;
+        margin: 10px 0;
+
+    }
+
+    .botão {
+        padding: 10px 0;
+        width: 100%;
+        font-size: 1rem;
+
+    }
+
+    .pratos,
+    .sobremesas,
+    .bebidas,
+    .quantidade {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 1px;
+        font-size: 1rem;
+
+    }
+
+    #resultado {
+        font-size: 1.1rem;
+    }
 }
