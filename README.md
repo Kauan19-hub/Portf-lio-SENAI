@@ -87,12 +87,22 @@ This portfolio project was developed with the goal of applying and improving my 
 
 <div align="left">
   <a href="https://www.figma.com/design/mzNPfg04N3Rg2ru2Y7TXth/Paleta-de-Cores-e-Logo?t=rnE1sR9BrjeKzGUa-0" target="blank">
-   <img src="https://img.shields.io/badge/Color Palette-2563EB?logo=figma&logoColor=white&style=for-the-badge" height="35" alt="figma logo" title="Color Palette" />
+   <img src="https://img.shields.io/badge/Color Palette Portfólio-2563EB?logo=figma&logoColor=white&style=for-the-badge" height="35" alt="figma logo" title="Color Palette Portfólio" />
   </a>
   <img width="2">
-  <a href="https://www.figma.com/design/bKf5APHcLWteqlwIexM6NU/Logo?node-id=0-1&p=f&t=uKndI4FQIfiFqN9q-0 target="blank">
-<img src="https://img.shields.io/badge/Responsiveness-2563EB?logo=figma&logoColor=white&style=for-the-badge" height="35" alt="figma logo" title="Responsiveness" />
-</a>
+   <a href="https://www.figma.com/design/bKf5APHcLWteqlwIexM6NU/Logo?node-id=0-1&p=f&t=uKndI4FQIfiFqN9q-0 target="blank">
+  <img src="https://img.shields.io/badge/Responsiveness Portfólio-2563EB?logo=figma&logoColor=white&style=for-the-badge" height="35" alt="figma logo" title="Responsiveness Portfólio" />
+  </a>
+</div>
+
+<div align="left">
+  <a href="https://www.figma.com/design/nf2eocHsBAN0AReZgtTFJO/Paleta-de-Cores---Menu-Interativo?t=0Y4PIwN7MFU7qCyl-0" target="blank">
+   <img src="https://img.shields.io/badge/Color Palette Menu-A4D3FC?logo=figma&logoColor=black&style=for-the-badge" height="35" alt="figma logo" title="Color Palette Menu" />
+  </a>
+  <img width="2">
+   <a href="https://www.figma.com/design/q0FIaXflxQhMTrvYbF534F/Responsividade---Menu-Interativo?t=0Y4PIwN7MFU7qCyl-0" target="blank">
+  <img src="https://img.shields.io/badge/Responsiveness Menu-A4D3FC?logo=figma&logoColor=black&style=for-the-badge" height="35" alt="figma logo" title="Responsiveness Menu" />
+  </a>
 </div>
 
 ###
