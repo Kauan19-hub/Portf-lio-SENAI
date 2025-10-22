@@ -19,7 +19,7 @@ function calcTotal() {
         }
 
         const total = ((precoPrato || 0) + (precoBebida || 0) + (precoSobremesa || 0)) * quantidade;
-        document.getElementById('resultado').textContent = `Total a pagar: ${total.toFixed(2)}`;
+        document.getElementById('resultado').textContent = `Total a pagar: R$ ${total.toFixed(2)}`;
  
 
 
