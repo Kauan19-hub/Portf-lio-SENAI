@@ -1104,6 +1104,7 @@ function checkAreaCirculo() {
 
 }
 
+// Função checkIdadeMot, verifica se o usuário tem idade pra dirigir ou não, e se não, quantos anos faltam pra completar a idade mínima 
 function checkIdadeMot() {
     const input = document.getElementById('idadeMotorista').value.trim()
     const feedback = document.getElementById('r28')
