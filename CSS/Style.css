@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    
 }
 
 :root {
@@ -18,16 +19,19 @@
     --github: #000000;
     --linkedin: #1B58DD;
     --copyright: #f5f5f5;
+    
 }
 
 body {
     background: linear-gradient(#2E1065, #765fac);
     color: var(--text);
     line-height: 1.6;
+    
 }
 
 html {
     scroll-behavior: smooth;
+    
 }
     
 .profile {
@@ -73,6 +77,7 @@ html {
     }
     100% {
         transform: translateY(0px);
+        
     }
 
 }
@@ -507,6 +512,7 @@ footer.networks-icons {
     }
     .float-img {
         width: 120px; height: 120px;
+        
     }
 }
 
@@ -517,6 +523,7 @@ footer.networks-icons {
     }
     .text-info p {
         font-size: 14px;
+        
     }
 }
 
