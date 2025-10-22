@@ -17,7 +17,7 @@
     --instagram: #D94747;
     --github: #000000;
     --linkedin: #1B58DD;
-    --copyright: #342f2f;
+    --copyright: #f5f5f5;
 }
 
 body {
@@ -244,10 +244,6 @@ html {
     
 }
 
-.subtitulo span {
-    color: var(--secondary);
-}
-
 .subpar {
     text-align: center;
     color: var(--text);
@@ -396,6 +392,12 @@ html {
 .about-me i {
     color: var(--info);
     margin: 6px;
+
+}
+
+.about-me a {
+    color: var(--text);
+    text-decoration: none;
 }
 
 footer.networks-icons {

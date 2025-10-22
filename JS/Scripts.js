@@ -95,6 +95,8 @@ enter('altura', checkIMC)
 enter('anoB', checkAno)
 enter('valor', checkEuro)
 enter('adivinha', checkAdivinha)
+enter('areaCirculo', checkAreaCirculo)
+enter('idadeMotorista', checkIdadeMot)
 
 //Animação das respostas 
 function showCards(Index) {
@@ -1061,12 +1063,86 @@ function checkAdivinha() {
         return
 
     } else if (opiniao < numSecreto) {
-        updateResult(feedback, `O número é maior. Ainda restam ${tentativas} restantes`, "warning")
+        updateResult(feedback, `O número é maior. Ainda restam ${tentativas} tentativas`, "warning")
 
     } else {
-        updateResult(feedback, `O número é menor. Ainda restam ${tentativas} restantes`, "warning")
+        updateResult(feedback, `O número é menor. Ainda restam ${tentativas} tentativas`, "warning")
         return
 
+    }
+}
+
+// Função checkAreaCirculo, onde se calcula o raio de um círculo
+function checkAreaCirculo() {
+    const area = document.getElementById('areaCirculo').value.trim()
+    const feedback= document.getElementById('r27')
+
+    if (area === "") {
+        updateResult(feedback, "Inválido. Digite um valor para a área", "error")
+        return
+
+    }
+
+    const valorArea = Number(area)
+
+    if (isNaN(valorArea) || valorArea <= 0) {
+        updateResult(feedback, "Inválido. A área não pode ser negativo", "error")
+        return
+
+    }
+
+    if (valorArea > 1000000) {
+        updateResult(feedback, "O número é muito grande", "warning")
+        return
+
+    }
+
+    const raio = Math.sqrt(area / Math.PI)
+    const formatRaio = raio.toFixed(2)
+
+    updateResult(feedback, `Raio do círculo com a área ${area} é ${formatRaio} unidades`, "success")
+
+}
+
+function checkIdadeMot() {
+    const input = document.getElementById('idadeMotorista').value.trim()
+    const feedback = document.getElementById('r28')
+
+    if (input === "") {
+        updateResult(feedback, "Inválido. Digite sua idade", "error")
+        return
+
+    }
+
+    const idade = Number(input) 
+
+    if (!Number.isFinite(idade)) {
+        updateResult(feedback, "Inválido. informe um número", "error")
+        return
+
+    }
+
+    if (!Number.isInteger(idade) || idade < 0) {
+        updateResult(feedback, "Inválido. A idade precisa ser inteiro", "error")
+        return
+
+    }
+
+    if (idade > 100) {
+        updateResult(feedback, "Idade muito alta", "warning")
+        return
+
+    }
+
+    const idadeMin = 18
+
+    if (idade >= idadeMin) {
+        updateResult(feedback, "Você já pode tirar carteira de motorista", "success")
+
+    } else {
+        const anos = idadeMin - idade
+        const txtAnos = anos === 1 ? "ano" : "anos"
+        updateResult(feedback, `Você ainda não pode. Falta(m) ${anos} ${txtAnos} para ter ${idadeMin} anos`, "info")
     }
 }
 
