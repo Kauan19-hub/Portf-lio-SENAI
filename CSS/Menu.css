@@ -12,6 +12,7 @@
     --orange2: #a67c52;
     --black: #000000;
     --white: #ffffff;
+    
 }
 
 body {
@@ -184,5 +185,6 @@ h1 {
 
     #resultado {
         font-size: 1.1rem;
+        
     }
 }
