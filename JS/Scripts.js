@@ -1118,7 +1118,7 @@ function checkIdadeMot() {
     const idade = Number(input) 
 
     if (!Number.isFinite(idade)) {
-        updateResult(feedback, "Inválido. informe um número", "error")
+        updateResult(feedback, "Inválido. informe sua idade", "error")
         return
 
     }
@@ -1143,7 +1143,7 @@ function checkIdadeMot() {
     } else {
         const anos = idadeMin - idade
         const txtAnos = anos === 1 ? "ano" : "anos"
-        updateResult(feedback, `Você ainda não pode. Falta(m) ${anos} ${txtAnos} para ter ${idadeMin} anos`, "info")
+        updateResult(feedback, `Você ainda não pode tirar carteira de motorista. Falta(m) ${anos} ${txtAnos} para ter ${idadeMin} anos`, "info")
     }
 }
 

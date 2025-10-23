@@ -21,25 +21,23 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
     overflow-x: hidden;
 
 }
 
 .navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
     display: flex;
+    position: sticky;
+    z-index: 1000;
     align-items: center;
-    padding: 9px 11px;
+    justify-content: center;
+    padding: 10px 15px;
     
 }
 
 .navbar ul {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    gap: 14px;
     list-style: none;
 
 }
@@ -81,15 +79,12 @@ h1 {
     background-color: var(--orange);
     color: var(--black);
     font-size: 1rem;
-    font-weight: bold;
 
 }
 
 .botão:hover {
     cursor:  pointer;
-    background-color: var(--orange2);
-    color: var(--white);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.29);
+    transform: scale(1.01);
 
 }
 
@@ -145,6 +140,7 @@ h1 {
 @media (max-width: 760px) {
     body {
         padding: 10px;
+        overflow: hidden;
        
     }
 
@@ -186,5 +182,97 @@ h1 {
     #resultado {
         font-size: 1.1rem;
         
+    }
+}
+
+/* Responsividade  */
+@media (min-width: 481px) and (max-width: 1024px) {
+    body {
+        padding: 20px;
+
+    }
+
+    section {
+        width: 90%;
+
+    }
+
+    .box {
+        padding: 25px;
+
+    }
+
+    .botão {
+        width: 80%;
+        align-items: center;
+
+    }
+}
+
+/* Responsividade  */
+@media (min-width: 1025px) and (max-width: 1366px) {
+    selection {
+        width: 70%;
+
+    }
+
+    .box {
+        padding: 30px;
+
+    }
+
+    .botão {
+        width: 100%;
+        align-items: center;
+
+    }
+}
+
+/* Responsividade  */
+@media (min-width: 400px) and (max-width: 900px) {
+    body {
+        padding: 10px;
+
+    }
+
+    section {
+        width: 100%;
+        padding: 8px 12px;
+        gap: 6px;
+
+    }
+
+    .box {
+        padding: 14px 11px;
+        border-radius: 10px;
+        transform: scale(0.94);
+
+    }
+
+    h1 {
+        font-size: 1.04rem;
+        margin: 4px 0;
+
+    }
+
+    .botão {
+        width: 100%;
+        padding: 7px 0;
+        font-size: 0.9rem;
+        align-self: center;
+
+    }
+
+    input,
+    select {
+        width: 100%;
+        font-size: 1rem;
+        padding: 6px;
+
+    }
+
+    #resultado {
+        font-size: 1.04rem;
+        margin-top: 5px;
     }
 }

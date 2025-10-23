@@ -9,7 +9,7 @@
 :root {
     --primary: #2E1065;
     --text: #FFF;
-    --secondary: #8B5CF6;
+    --secondary: #745ab3;
     --accent: #06B6D4;
     --warning: #F59E0B;
     --success: #16A34A;
@@ -135,47 +135,6 @@ html {
 
 }
 
-/* Responsividade */
-@media (max-width: 750px) {
-    .menu_responsive {
-        display: block;
-
-    }
-
-    .navegation ul {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 60vw;
-        height: 100vh;
-        transition: left 0.4s ease;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 20px;
-        z-index: 1200;
-        margin: 0;
-        padding-left: 0;
-        border-radius: 7px;
-        background-color: var(--secondary);
-        border: 2px solid var(--text);
-
-    }
-
-    .navegation.active ul {
-        left: 0;
-        padding-left: 0px;
-
-    }
-
-    .navegation ul li a {
-        font-size: 1.1rem;
-        width: 100%;
-        display: block;
-        padding: 9px 20px;
-    
-    }
-}
 
 .navegation {
     background-color: var(--primary);
@@ -195,7 +154,7 @@ html {
     gap: 25px;
     align-items: center;
     list-style: none;
-
+    
 }
 
 .navegation a {
@@ -204,7 +163,7 @@ html {
     font-size: 1rem;
     padding: 9px 10px;
     cursor: pointer;
-
+    
 }
 
 .navegation a:hover {
@@ -263,7 +222,6 @@ html {
     margin: 0 auto;
     border: 2px solid var(--info);
     border-radius: 16px;
-    backdrop-filter: blur(10px);
     background-color: rgba(0, 0, 0, 0.10);
     transition: all 0.4s ease;
     box-shadow: 0 4px 13px rgba(0, 0, 0, 0.7);
@@ -276,7 +234,7 @@ html {
     justify-content: center;
     gap: 20px;
     transition: transform 0.5s ease-in-out;
-
+    
 }
 
 .card {
@@ -295,7 +253,7 @@ html {
 
 .card:hover {
     transform: scale(1.02);
-
+    
 }
 
 .answer-box {
@@ -304,7 +262,7 @@ html {
     align-items: center;
     gap: 10px;
     margin: 16px 0;
-
+    
 }
 
 .answer-box input {
@@ -324,7 +282,7 @@ html {
     background-color: var(--primary);
     color: var(--text);
     cursor: pointer;
-
+    
 }
 
 .result {
@@ -347,7 +305,7 @@ html {
 .result.warning {
     background-color: var(--warning);
     color: var(--text);
-
+    
 }
 
 .result.error {
@@ -380,25 +338,25 @@ html {
     align-items: center;
     transition: 0.4s;
     gap: 1rem;
-
+    
 }
 
 .gender-Validator span {
     color: var(--copyright);
-
+    
 }
 
 .about-me p {
     margin: 0;
     padding: 4px;
     color: var(--text);
-
+    
 }
 
 .about-me i {
     color: var(--info);
     margin: 6px;
-
+    
 }
 
 .about-me a {
@@ -426,7 +384,7 @@ footer.networks-icons {
     gap: 6px;
     text-align: center;
     justify-content: center;
-
+    
 }
 
 .instagram {
@@ -455,7 +413,7 @@ footer.networks-icons {
     gap: 13px;
     margin: 5px;
     border-radius: 50%;
-
+    
 }
 
 .github i {
@@ -491,7 +449,7 @@ footer.networks-icons {
 .linkedin i:hover {
     background-color: var(--linkedin);
     cursor: pointer;
-  
+    
 }
 
 .rights {
@@ -527,3 +485,43 @@ footer.networks-icons {
     }
 }
 
+    /* Responsividade */
+@media (max-width: 750px) {
+    .menu_responsive {
+        display: block;
+    
+    }
+    
+    .navegation ul {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 60vw;
+        height: 100vh;
+        transition: left 0.4s ease;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+        z-index: 1200;
+        margin: 0;
+        padding-left: 0;
+        border-radius: 7px;
+        background-color: var(--secondary);
+    
+    }
+    
+    .navegation.active ul {
+        left: 0;
+        padding-left: 0px;
+    
+    }
+    
+    .navegation ul li a {
+        font-size: 1.1rem;
+        width: 100%;
+        display: block;
+        padding: 9px 20px;
+        
+    }
+}
