@@ -97,6 +97,10 @@ enter('valor', checkEuro)
 enter('adivinha', checkAdivinha)
 enter('areaCirculo', checkAreaCirculo)
 enter('idadeMotorista', checkIdadeMot)
+enter('numberC1', checkNumC)
+enter('numberC2', checkNumC)
+enter('numberC3', checkNumC)
+enter('raiz', checkRaiz)
 
 //Animação das respostas 
 function showCards(Index) {
@@ -167,6 +171,12 @@ function checkParImpar() {
 
     }
 
+    if (num > 1000) {
+        updateResult(feedback, "Número muito alto", "warning")
+        return
+
+    }
+
      if (num <= 0) {
         updateResult(feedback, "Inválido. O número precisa ser inteiro", "error")
         return
@@ -196,8 +206,15 @@ function checkMaior() {
 
     const n1 = Number(numero1)
     const n2 = Number(numero2)
+
     if (isNaN(n1) || isNaN(n2)) {
         updateResult(feedback, "Números inválidos", "error")
+        return
+
+    }
+
+    if ((n1 > 1000) || (n2 > 1000)) {
+        updateResult(feedback, "Número muito alto", "warning")
         return
 
     }
@@ -250,6 +267,12 @@ function checkTemper() {
 
     if (temperatura === "") {
         updateResult(feedback, "Inválido. Digite a temperatura atual", "error")
+        return
+
+    }
+
+    if (temperatura > 1000) {
+        updateResult(feedback, "Número muito alto", "warning")
         return
 
     }
@@ -365,6 +388,12 @@ function checkFatorial() {
 
     if (!Number.isInteger(number)) {
         updateResult(feedback, "Inválido. O número precisa ser inteiro", "error")
+        return
+
+    }
+
+    if (number > 1000) {
+         updateResult(feedback, "Número muito alto", "warning")
         return
 
     }
@@ -582,6 +611,12 @@ function checkCalc() {
         
      }
 
+     if ((inputCalc1 > 1000) && (inputCalc2 > 1000)) {
+        updateResult(feedback, "Número muito alto", "warning")
+        return
+
+     }
+
      if (operation === "+") {
         updateResult(feedback, `${inputCalc1} + ${inputCalc2} é igual a ${addition.toFixed(2)}`, "info")
         return
@@ -627,7 +662,13 @@ function checkMedia() {
             updateResult(feedback, `Inválido. Nota ${i + 1} não pode ser negativo`, "error")
             return
 
-    }
+            
+        }
+
+        if (notas[i] > 100) {
+            updateResult(feedback, "Número muito alto", "warning")
+            return
+        }
 
 }
 
@@ -645,6 +686,18 @@ function checkPaint() {
 
     const area = inputWidth * inputHeight
     const paint = (area / 2).toFixed(2)
+
+    if (inputWidth > 1000) {
+        updateResult(feedback, "Número muito alto", "warning")
+        return
+
+    }
+
+    if (inputHeight > 1000) {
+        updateResult(feedback, "Número muito alto", "warning")
+        return
+
+    }
 
     if (isNaN(inputWidth)) {
         updateResult(feedback, "Inválido. Digite a largura", "error")
@@ -696,6 +749,16 @@ function checkDiference() {
 
     }
 
+    if (number1 > 1000) {
+        updateResult(feedback, "Número muito alto", "warning")
+        
+    }
+
+    if (number2 > 1000) {
+        updateResult(feedback, "Número muito alto", "warning")
+        return
+    }
+
     if (isNaN(number2)) {
         updateResult(feedback, "Inválido. Digite um número", "error")
         return
@@ -726,6 +789,17 @@ function checkDivNote() {
         
     }
 
+    if (inputN1 > 1000) {
+        updateResult(feedback, "Número muito alto", "warning")
+        return
+
+    }
+
+    if (inputN2 > 1000) {
+        updateResult(feedback, "Número muito alto", "warning")
+        return
+    }
+    
     if (inputN1 === 0) {
         updateResult(feedback, "Não é possível dividir por 0", "error")
         return
@@ -785,6 +859,13 @@ function checkVetor2() {
     if (numeros.some(isNaN)) {
         updateResult(feedback, "Inválido. Os campos devem ser preenchidos com números inteiros", "error")
         return
+
+    }
+
+    if (numeros.some(num => num > 1000)) {
+        updateResult(feedback, "Número muito alto", "warning")
+        return
+
     }
 
     const soma = numeros.reduce((acc, val) => acc + val, 0)
@@ -818,6 +899,12 @@ function checkVetor3() {
     
     if (numeros.some(num => !Number.isInteger(num))) {
          updateResult(feedback, "Inválido. O número precisa ser inteiro", "error")
+        return
+
+    }
+
+    if (numeros.some(num => 1000)) {
+        updateResult(feedback, "Número muito alto", "warning")
         return
 
     }
@@ -899,6 +986,12 @@ function checkVetor5() {
 
     }
 
+    if (idades.some(idade => idade > 100 )) {
+        updateResult(feedback, "Número muito alto", "warning")
+        return
+
+    }
+
     const soma = idades.reduce((acc, idade) => acc + idade, 0)
     const media = soma / idades.length
     const acimaMedia = idades.filter(idade => idade > media)
@@ -921,6 +1014,17 @@ function checkIMC() {
 
     if (isNaN(altura)) {
         updateResult(feedback, "Digite sua altura", "error")
+        return
+
+    }
+
+    if (peso > 1000) {
+        updateResult(feedback, "Número muito alto", "warning")
+        return
+    }
+
+    if (altura > 1000) {
+        updateResult(feedback, "Número muito alto", "warning")
         return
 
     }
@@ -974,6 +1078,12 @@ function checkAno() {
 
     }
 
+    if (anoo >= 3000) {
+        updateResult(feedback, "Número muito alto", "warning")
+        return
+
+    }
+
     const anoBi = (anoo % 4 === 0 && anoo % 100 !== 0) || (anoo % 400 === 0)
 
     if (anoBi) {
@@ -1007,7 +1117,7 @@ function checkEuro() {
     }
 
     if (valorEuro > 1000000000) {
-        updateResult(feedback, "Inválido. O número é alto demais", "error")
+        updateResult(feedback, "Número muito alto", "warning")
         return
 
     }
@@ -1092,7 +1202,7 @@ function checkAreaCirculo() {
     }
 
     if (valorArea > 1000000) {
-        updateResult(feedback, "O número é muito grande", "warning")
+        updateResult(feedback, "Número muito alto", "warning")
         return
 
     }
@@ -1130,7 +1240,7 @@ function checkIdadeMot() {
     }
 
     if (idade > 100) {
-        updateResult(feedback, "Idade muito alta", "warning")
+        updateResult(feedback, "Número muito alto", "warning")
         return
 
     }
@@ -1144,7 +1254,88 @@ function checkIdadeMot() {
         const anos = idadeMin - idade
         const txtAnos = anos === 1 ? "ano" : "anos"
         updateResult(feedback, `Você ainda não pode tirar carteira de motorista. Falta(m) ${anos} ${txtAnos} para ter ${idadeMin} anos`, "info")
+
     }
+}
+
+function checkNumC() {
+    const n1 = document.getElementById('numberC1').value.trim()
+    const n2 = document.getElementById('numberC2').value.trim()
+    const n3 = document.getElementById('numberC3').value.trim()
+    const feedback = document.getElementById('r29')
+
+    if (n1 === "" || n2 === "" || n3 === "") {
+        updateResult(feedback, "Inválido. Preencha os 3 campos", "error")
+        return
+
+    }
+
+    const numeros = [Number(n1), Number(n2), Number(n3)]
+
+    if (numeros.some(num => !Number.isInteger(num))) {
+        updateResult(feedback, "Inválido. Escreva apenas números inteiros", "error")
+
+    }
+
+    if(numeros.some(num => num < 0)) {
+        updateResult(feedback, "Inválido. Os números não podem ser negativos", "error")
+        return
+
+    }
+
+    if (numeros.some(num => num > 1000)) {
+        updateResult(feedback, "Número muito alto", "warning")
+        return
+
+    }
+
+    const ordem = [...numeros].sort((a,b)  => a - b)
+
+    if (new Set(numeros).size === 1) {
+        updateResult(feedback, "Todos os números são iguais", "warning")
+        return
+
+    }
+
+    updateResult(feedback, `Ordem crescente: ${ordem.join(", ")}`, "success")
+
+}
+
+function checkRaiz() {
+    const numero = document.getElementById('raiz').value.trim()
+    const feedback = document.getElementById('r30')
+
+    if (numero === "") {
+        updateResult(feedback, "Digite um número", "error")
+        return
+
+    }
+
+    const num = Number(numero)
+
+    if (isNaN(num)) {
+        updateResult(feedback, "Inválido. Escreva um valor numérico", "error")
+        return
+
+    }
+
+    if (num > 1000) {
+        updateResult(feedback, "Número muio alto", "warning")
+        return
+        
+    }
+
+    if (num < 0) {
+        updateResult(feedback, "Números negativos não possuem raíz real", "warning")
+        return
+
+    }
+
+    const raizNum = Math.sqrt(num).toFixed(2)
+
+    updateResult(feedback, `A raíz quadrada de ${num} é ${raizNum}`, "success")
+
+
 }
 
 //Animação de digitação no nome
