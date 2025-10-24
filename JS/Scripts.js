@@ -101,6 +101,8 @@ enter('numberC1', checkNumC)
 enter('numberC2', checkNumC)
 enter('numberC3', checkNumC)
 enter('raiz', checkRaiz)
+enter('banco', checkBanco)
+enter('cedula', checkCedula)
 
 //Animação das respostas 
 function showCards(Index) {
@@ -1258,6 +1260,7 @@ function checkIdadeMot() {
     }
 }
 
+// Função checkNumC, onde recebe 3 números e exibe-os em ordem crescente
 function checkNumC() {
     const n1 = document.getElementById('numberC1').value.trim()
     const n2 = document.getElementById('numberC2').value.trim()
@@ -1301,6 +1304,7 @@ function checkNumC() {
 
 }
 
+// Função checkRaiz, recebe um número e exibe a raíz quadrada dele
 function checkRaiz() {
     const numero = document.getElementById('raiz').value.trim()
     const feedback = document.getElementById('r30')
@@ -1335,6 +1339,155 @@ function checkRaiz() {
 
     updateResult(feedback, `A raíz quadrada de ${num} é ${raizNum}`, "success")
 
+}
+
+let contaCriada = false
+let saldo = 0
+let jogo = true
+
+// Função checkBanco, onde simula um jogo de banco, com até 5 opções diferentes para o usuário
+// escolher
+function checkBanco() {
+    const opcao = document.getElementById('banco').value.trim()
+    const feedback = document.getElementById('r31')
+
+    if (!jogo) {
+        updateResult(feedback, "Jogo encerrado", "warning")
+        return
+
+    }
+
+    if (opcao === "") {
+        updateResult(feedback, "Inválido. Digite uma opção entre 1 e 5", "error")
+        return
+
+    }
+
+    const num = Number(opcao) 
+    if (isNaN(num) || num < 1 || num > 5) {
+        updateResult(feedback, "Inválido. Escolha números de 1 a 5", "error")
+        return
+
+    }
+
+    switch (num) {
+        case 1:
+            if (contaCriada) {
+                updateResult(feedback, "Sua conta já foi criada", "warning")
+
+            } else {
+                contaCriada = true
+                saldo = 0
+                updateResult(feedback, "Sua conta foi criada! Saldo: R$ 0,00", "success")
+              
+            }
+            break
+
+        case 2: 
+            if (!contaCriada) {
+                updateResult(feedback, "Crie uma conta antes do depósito", "warning")
+                return
+
+            }
+
+            const deposito = prompt("Digite o valor do seu depósito:")
+            const valorDep = Number(deposito)
+            if (isNaN(valorDep) || valorDep <= 0) {
+                updateResult(feedback, "Valor inválido para depósito", "error")
+                return
+
+            }
+
+            if (valorDep > 100000000) {
+                updateResult(feedback, "Valor alto demais", "warning")
+                return
+
+            }
+
+            saldo += valorDep
+            updateResult(feedback, `Depósito de R$ ${valorDep.toFixed(2)} feito! Saldo: R$ ${saldo.toFixed(2)}`, "success")
+            break
+
+        case 3:
+            if (!contaCriada) {
+                updateResult(feedback, "Crie uma conta antes do saque", "warning")
+                return
+
+            } 
+
+            const sacar = prompt("Digite o valor do saque:")
+            const valor = Number(sacar)
+            if (isNaN(valor) || valor <= 0) {
+                updateResult(feedback, "Valor inválido para saque", "error")
+                return
+
+            }
+
+            if (valor > saldo) {
+                updateResult(feedback, "Saldo insuficiente", "warning")
+                return
+            }
+
+            saldo -= valor
+            updateResult(feedback, `Saque de R$ ${valor.toFixed(2)} feito! Saldo: R$ ${saldo.toFixed(2)}`, "success")
+            break
+
+        case 4:
+            if (!contaCriada) {
+                updateResult(feedback, "Crie uma conta antes de verificar o saldo", "warning")
+                return
+
+            }
+
+            updateResult(feedback, `Saldo: R$ ${saldo.toFixed(2)}`, "success")
+            break
+
+        case 5:
+            jogo = false
+            updateResult(feedback, "Jogo encerrado", "success")
+            break
+
+    }
+}
+
+// Função checkCedula, seu objetivo é exibir uma quantidade de cédulas que
+function checkCedula() {
+    const input = document.getElementById('cedula').value.trim()
+    const feedback = document.getElementById('r32')
+
+    if (input === "") {
+        updateResult(feedback, "Inválido. Escolha um valor", "error")
+        return
+
+    }
+
+    const valor = Number(input)
+    if (isNaN(valor) || valor <= 0 || !Number.isInteger(valor)) {
+        updateResult(feedback, "Inválido. Digite um número inteiro positivo", "error")
+        return
+
+    }
+
+    if (valor > 100000) {
+        updateResult(feedback, "Valor alto demais", "warning")
+        return
+
+    }
+
+    let restante = valor
+    const cedulas = [200, 100, 50, 20, 10, 5, 1]
+    const resultado = []
+
+    for (let c of cedulas) {
+        const qtd = Math.floor(restante / c)
+        if (qtd > 0) {
+            resultado.push(`${qtd} nota ${qtd > 1 ? 's' : ' '} de R$ ${c}`)
+            restante -= qtd * c
+
+        }
+    }
+
+    updateResult(feedback, `Para R$ ${valor} é necessário ${resultado.join()}`, "success")
 
 }
 
