@@ -103,6 +103,15 @@ enter('numberC3', checkNumC)
 enter('raiz', checkRaiz)
 enter('banco', checkBanco)
 enter('cedula', checkCedula)
+enter('taxa', checkJuros)
+enter('capital', checkJuros)
+enter('periodo', checkJuros)
+enter('emprestimo', checkEmp)
+enter('taxaF', checkEmp)
+enter('parcelas', checkEmp)
+enter('raio', checkCirculo)
+enter('alt', checkCirculo)
+enter('lado', checkQuadrado)
 
 //Animação das respostas 
 function showCards(Index) {
@@ -1489,6 +1498,198 @@ function checkCedula() {
 
     updateResult(feedback, `Para R$ ${valor} é necessário ${resultado.join()}`, "success")
 
+}
+
+// Função checkINSS, onde o usuário digita o salário e será calculado o desconto
+// do INSS baseado na alíquota
+const calcINSS = () => {
+    const salario = document.getElementById('inss').value.trim()
+    const feedback = document.getElementById('r33')
+
+    if (salario === "") {
+        updateResult(feedback, "Inválido. Digite o salário", "error")
+        return
+
+    }
+
+    const salarioINSS = Number(salario)
+    if (isNaN(salarioINSS) || salarioINSS <= 0) {
+        updateResult(feedback, "Inválido. Digite um número positivo", "error")
+        return
+
+    }
+
+    if (salarioINSS > 100000) {
+        updateResult(feedback, "Número muito alto", "warning")
+        return
+
+    }
+
+    let aliquota
+    if (salarioINSS <= 1410) aliquota = 0.075
+    else if (salarioINSS <= 2670.80) aliquota = 0.09
+    else if (salarioINSS <= 4100.03) aliquota = 0.12
+    else aliquota = 0.14
+
+    const desconto = salarioINSS * aliquota
+    const salarioLiquido = salarioINSS - desconto
+
+    updateResult(feedback, `Salário: R$ ${salarioINSS.toFixed(2)}, alíquota: ${(aliquota * 100).toFixed(1)}%, desconto: ${desconto.toFixed(2)}, salário líquido: R$ ${salarioLiquido.toFixed(2)}`, "success")
+
+}
+
+enter('inss', calcINSS)
+
+// Função checkJuros, o usuário digita a capital, a taxa e o período em meses, para calcular
+// os juros compostos
+function checkJuros() {
+    const capital = document.getElementById('capital').value.trim()
+    const taxa = document.getElementById('taxa').value.trim()
+    const periodo = document.getElementById('periodo').value.trim()
+    const feedback = document.getElementById('r34')
+
+    if (capital === "" || taxa === "" || periodo === "") {
+        updateResult(feedback, "Inválido. Preencha todos os campos", "error")
+        return
+
+    }
+
+    const capital2 = Number(capital)
+    const taxa2 = Number(taxa) / 100
+    const periodo2 = Number(periodo)
+
+    if (isNaN(capital2) || capital2 <= 0 || isNaN(taxa2) || taxa2 <= 0 || isNaN(periodo2) || periodo2 <= 0) {
+        updateResult(feedback, "Inválido. Digite números positivos", "error")
+        return
+
+    }
+
+    if (capital2 <= 0 || capital2 > 100000) {
+        updateResult(feedback, "Inválido. Digite uma capital inicial entre R$ 0.01 e R$ 100.000", "error")
+    }
+
+    if (taxa2 <= 0 || taxa2 > 1) {
+        updateResult(feedback, "Inválido. Digite uma taxa entre 0% e 100%", "error")
+        return
+
+    }
+
+     if (capital2 > 100000 || taxa2 > 100000) {
+        updateResult(feedback, "Número muito alto", "warning")
+        return
+
+    }
+
+    if (periodo2 < 1 || periodo2 > 12) {
+        updateResult(feedback, "Período máximo é de até 12 meses", "warning")
+        return
+    }
+
+    const montante = capital2 * Math.pow(1 + taxa2, periodo2)
+    const juros = montante - capital2
+    updateResult(feedback, `Capital inicial: R$ ${capital2.toFixed(2)}, juros: R$ ${juros.toFixed(2)}, montante: R$ ${montante.toFixed(2)}`, "success")
+
+}
+
+// Função checkEmp, onde são inseridos os valores do empréstimo, da taxa e o número de parcelas para calcular o valor de 
+// cada parcela
+function checkEmp() {
+    const emprestimo = document.getElementById('emprestimo').value.trim()
+    const taxaF = document.getElementById('taxaF').value.trim()
+    const parcelas = document.getElementById('parcelas').value.trim()
+    const feedback = document.getElementById('r35')
+
+    if (!emprestimo || !taxaF || !parcelas) {
+        updateResult(feedback, "Inválido. Preecha todos os campos", "error")
+        return
+
+    }
+
+    const empr = Number(emprestimo)
+    const tax = Number(taxaF) / 100
+    const parc = Number(parcelas)
+
+    if (isNaN(empr) || empr <= 0 || empr > 100000) {    
+        updateResult(feedback, "Inválido. Valor do empréstimo precisa ser entre 0 e 100.000", "error")
+        return
+
+    }
+
+    if (isNaN(tax) || tax <= 0 || tax > 1) {
+        updateResult(feedback, "Inválido. A taxa precisa ser entre 0% e 100%", "error")
+        return
+
+    }
+
+    if (isNaN(parc) || parc < 1 || parc > 120) {
+        updateResult(feedback, "Inválido. A parcela precisa ser entre 1 e 120", "error")
+        return
+
+    }
+
+    const parcela = empr * (tax * Math.pow(1 + tax, parc)) / (Math.pow(1 + tax, parc) - 1)
+    updateResult(feedback, `Empréstimo: R$ ${empr.toFixed(2)}, taxa: ${(tax*100).toFixed(2)}%, parcelas: ${parc}, valor da parcela: R$ ${parcela.toFixed(2)}`, "success")
+
+}
+ 
+// Função checkCirculo, onde pede o raio e altura de um circulo
+function checkCirculo() {
+    const raioInput = document.getElementById('raio').value.trim()
+    const alturaInput = document.getElementById('alt').value.trim()
+    const feedback = document.getElementById('r36')
+
+    if (!raioInput || !alturaInput) {
+        updateResult(feedback, "Inválido. Preencha os dois campos", "error")
+        return
+
+    }
+
+    const raio = Number(raioInput)
+    const altura = Number(alturaInput)
+    if (isNaN(raio) || raio <= 0 || isNaN(altura) || altura <= 0) {
+        updateResult(feedback, "Inválido. Os números precisam ser positivos", "error")
+        return
+
+    }
+
+    if (raio > 100000 || altura > 100000) {
+        updateResult(feedback, "Número alto demais. Valorem devem ser menores que 100.000", "warning")
+        return
+
+    }
+
+    const volume = Math.PI * Math.pow(raio, 2) * altura
+    updateResult(feedback, `Raio: ${raio.toFixed(2)}, altura: ${altura.toFixed(2)}, volume: ${volume.toFixed(2)}`, "success")
+
+}
+
+// Função checkQuadrado, tem como objetivo receber o lado de um quadrado e retornar a área dele
+function checkQuadrado() {
+    const ladoInput = document.getElementById('lado').value.trim()
+    const feedback = document.getElementById('r37')
+
+    if (!ladoInput) {
+        updateResult(feedback, "Inválido. Digite o lado do quadrado", "error")
+        return
+
+    }
+
+    const lado = Number(ladoInput)
+    if (isNaN(lado) || lado <= 0) {
+        updateResult(feedback, "Inválido. Digite um número positivo", "error")
+        return
+
+    }
+
+    if (lado > 10000) {
+        updateResult(feedback, "Número muito alto. O lado precisa ser menor que 10.000", "warning")
+        return
+
+    }
+
+    const area = lado * lado
+    updateResult(feedback, `Lado: ${lado.toFixed(2)}, área: ${area.toFixed(2)}`, "success")
+    
 }
 
 //Animação de digitação no nome

@@ -461,10 +461,65 @@
         <h2>32° Exercício</h2>
         <p class="question">Escolha um valor para exibir quantas cédulas de 200, 100, 50, 20, 10, 5 e 1 precisam para formá-lo</p>
         <div class="answer-box">
-          <input type="number" id="cedula" placeholder="Digite a opção" />
+          <input type="number" id="cedula" placeholder="Digite o número" />
           <button onclick="checkCedula()">Verificar</button>
         </div>
         <p class="result" id="r32"></p>
+      </div>
+
+      <div class="card">
+        <h2>33° Exercício</h2>
+        <p class="question">INSS | Digite o salário para calcular o desconto do INSS com base na alíquota</p>
+        <div class="answer-box">
+          <input type="text" id="inss" placeholder="Digite o salário" />
+          <button onclick="calcINSS()">Verificar</button>
+        </div>
+        <p class="result" id="r33"></p>
+      </div>
+
+      <div class="card">
+        <h2>34° Exercício</h2>
+        <p class="question">Juros Compostos | Digite a capital inicial, a taxa (%) e o perído em meses para calcular os juros compostos</p>
+        <div class="answer-box">
+          <input type="number" id="capital" placeholder="Capital" />
+          <input type="number" id="taxa" placeholder="Taxa (%)" />
+          <input type="number" id="periodo" placeholder="Período em meses" />
+          <button onclick="checkJuros()">Verificar</button>
+        </div>
+        <p class="result" id="r34"></p>
+      </div>
+
+      <div class="card">
+        <h2>35° Exercício</h2>
+        <p class="question">Digite o valor do empréstimo, a taxa de juros no mês, e a quantidade de parcelas para calcular o valor de cada parcela</p>
+        <div class="answer-box">
+          <input type="number" id="emprestimo" placeholder="Valor do empréstimo" />
+          <input type="number" id="taxaF" placeholder="Taxa (%) ao mês" />
+          <input type="number" id="parcelas" placeholder="Número de parcelas" />
+          <button onclick="checkEmp()">Verificar</button>
+        </div>
+        <p class="result" id="r35"></p>
+      </div>
+
+      <div class="card">
+        <h2>36° Exercício</h2>
+        <p class="question">Volume | Escreva o raio da base a altura do cilindro </p>
+        <div class="answer-box">
+          <input type="number" id="raio" placeholder="Raio de base" />
+          <input type="number" id="alt" placeholder="Altura" />
+          <button onclick="checkCirculo()">Verificar</button>
+        </div>
+        <p class="result" id="r36"></p>
+      </div>
+
+      <div class="card">
+        <h2>37° Exercício</h2>
+        <p class="question">Volume | Escreva o lado de um quadrado como parâmetro para retornar a área dele </p>
+        <div class="answer-box">
+          <input type="number" id="lado" placeholder="Digite a área do quadrado" />
+          <button onclick="checkQuadrado()">Retornar Área</button>
+        </div>
+        <p class="result" id="r37"></p>
       </div>
       
     </div>
