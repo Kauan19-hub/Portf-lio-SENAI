@@ -66,7 +66,8 @@ This portfolio project was developed with the goal of applying and improving my 
 
 ###
 
-`'Poppins', sans-serif`
+`Arial, Helvetica, sans-serif`
+
 ###
 
 **<h2>‼️Meaning and Sensations of Colors:</h2>**
