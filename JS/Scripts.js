@@ -2,6 +2,7 @@
 let script = 0;
 const cards = document.querySelectorAll('.card')
 const carousel = document.getElementById('carousel')
+console.log("Sistema funcionando")
 
 let attemps = 5
 
@@ -112,6 +113,7 @@ enter('parcelas', checkEmp)
 enter('raio', checkCirculo)
 enter('alt', checkCirculo)
 enter('lado', checkQuadrado)
+enter('semestre', checkPrep)
 
 //Animação das respostas 
 function showCards(Index) {
@@ -1690,6 +1692,44 @@ function checkQuadrado() {
     const area = lado * lado
     updateResult(feedback, `Lado: ${lado.toFixed(2)}, área: ${area.toFixed(2)}`, "success")
     
+}
+
+// Função checkPrep, usuário digita uma resposta em relação à pergunta, e a máquina retorna uma 
+// mensagem à ele
+function checkPrep() {
+    const resposta = document.getElementById('semestre').value.trim()
+    const feedback = document.getElementById('r38')
+
+    if (resposta === "") {
+        updateResult(feedback, "Digite sua resposta", "error")
+        return
+
+    }
+
+    const txt = removeAcentos(resposta.toLowerCase())
+    if (txt.includes("sim") || txt.includes("logico") || txt.includes("com toda certeza")) {
+        updateResult(feedback, "Ótimo! Continue assim", "info")
+
+    } else if (txt.includes("nao") || txt.includes("nem tanto") || txt.includes("sem chance")) {
+        updateResult(feedback, "Entendo! Ainda há tempo de pensar e se preparar", "info")
+   
+    } else if (txt.includes("um pouco") || txt.includes("nao sei ainda")) {
+        updateResult(feedback, "Vamos lá! Pense positivo", "info")
+
+    } else if (txt.includes("estou lutando")) {
+        updateResult(feedback, "Boa! A chave é persistir", "info")
+
+    } else {
+        updateResult(feedback, "Resposta não identificada", "error")
+
+    }
+}
+
+// Função removeAcentos, sua tarefa é ignorar acentos nas palavras, para funcionar
+// com ou sem eles
+function removeAcentos(txt) {
+    return txt.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
+
 }
 
 //Animação de digitação no nome

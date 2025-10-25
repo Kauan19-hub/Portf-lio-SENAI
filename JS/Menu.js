@@ -1,4 +1,6 @@
 // Uma única função para o código funcionar, além da função 'enter'
+console.log("Sistema funcionando")
+
 function calcTotal() {
     const precoPrato = parseInt(document.getElementById('prato').value);
     const quantidade = parseInt(document.getElementById('qntd').value);

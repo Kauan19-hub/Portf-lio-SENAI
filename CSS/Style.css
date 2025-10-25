@@ -249,7 +249,11 @@ html {
 
 }
 
-
+.card p {
+    text-align: justify;
+    margin: 0 auto;
+    width: 80%;
+}
 
 .card:hover {
     transform: scale(1.02);
