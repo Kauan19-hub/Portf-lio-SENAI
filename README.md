@@ -1,8 +1,8 @@
-**<h2>📘 FEWP Portfolio Documentation (Front-End Web Programming)</h2>**
+**<h2>FEWP Portfolio Documentation (Front-End Web Programming)</h2>**
 
 ###
 
-**<h2>📌 Context:</h2>**
+**<h2>Context:</h2>**
 
 ###
 
@@ -28,7 +28,7 @@ During the development of the portfolio, we applied the main concepts of web dev
 
 ###
 
-**<h2>🗃️ Summary:</h2>**
+**<h2>Summary:</h2>**
 
 ###
 
@@ -36,7 +36,7 @@ This portfolio project was developed with the goal of applying and improving my 
 
 ###
 
-**<h2>⚙️ Tools Used:</h2>**
+**<h2>Tools Used:</h2>**
  
 ###
 
@@ -49,7 +49,7 @@ This portfolio project was developed with the goal of applying and improving my 
 
 ###
 
-**<h2>🎖 Objectives:</h2>**
+**<h2>Objectives:</h2>**
 
 ###
 
@@ -62,7 +62,7 @@ This portfolio project was developed with the goal of applying and improving my 
 
 ###
 
-**<h2>📗 Text Font Used:</h2>**
+**<h2>Text Font Used:</h2>**
 
 ###
 
@@ -70,7 +70,7 @@ This portfolio project was developed with the goal of applying and improving my 
 
 ###
 
-**<h2>‼️Meaning and Sensations of Colors:</h2>**
+**<h2>Meaning and Sensations of Colors:</h2>**
 
 ###
 
@@ -112,7 +112,7 @@ This portfolio project was developed with the goal of applying and improving my 
 
 ---
 
-**<h2>🤝 Contributions:</h2>**
+**<h2>Contributions:</h2>**
 
 ###
 
