@@ -10,12 +10,12 @@ During the development of the portfolio, we applied the main concepts of web dev
 
 ---
 
-- Basic HTML structure;
-- Styling with CSS;
-- Interactivity with JavaScript;
-- Basic UI/UX principles;
+- Basic `HTML` structure;
+- Styling with `CSS`;
+- Interactivity with `JavaScript`;
+- Basic `UI/UX` principles;
 - Design tools like Figma;
-- Project organization with VS Code;
+- Project organization with VSCode;
 - Documentation on GitHub. 
 
 ###
