@@ -11,7 +11,6 @@ function enter(input, checkFunction) {
     input_box.addEventListener('keydown', function(event) {
         if (event.key === "Enter") {
             checkFunction()
-
         }
     })
 };
