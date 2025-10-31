@@ -1,5 +1,4 @@
-//Definições de Arrow Function
-let script = 0;
+let script = 0
 const cards = document.querySelectorAll('.card')
 const carousel = document.getElementById('carousel')
 console.log("Sistema funcionando")
