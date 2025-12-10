@@ -94,21 +94,5 @@ Pull Requests are welcome! For changes or suggestions, please open an issue to d
 
 ###
 
-<div align="left">
-  <img src="https://skillicons.dev/icons?i=js" height="27" alt="javascript logo" title="JavaScript" />
-  <img width="1" />
-  <img src="https://skillicons.dev/icons?i=html" height="27" alt="html5 logo" title="HTML5" />
-  <img width="1" />
-  <img src="https://skillicons.dev/icons?i=css" height="27" alt="css logo" title="CSS3" />
-  <img width="1" />
-  <img src="https://skillicons.dev/icons?i=vscode" height="27" alt="vscode logo" title="Visual Studio Code" />
-  <img width="1" />
-  <img src="https://skillicons.dev/icons?i=github" height="27" alt="github logo" title="Github" />
-  <img width="1" />
-  <img src="https://skillicons.dev/icons?i=figma" height="27" alt="figma logo" title="Figma" />
-</div>
-
-###
-
 
 
